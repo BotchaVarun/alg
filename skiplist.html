@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Skip List</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="icon" href="img/log.png" sizes="32x32">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/main.css">
+
+        <link rel="stylesheet" href="css/skiplist.css">
+    </head>
+    <body>
+    
+        <nav class="navbar">
+            <ul class="slidebar">
+                <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+                <li> <h4 class="about"><a href="about.html">About</a></h4></li>
+                <li> <h4 class="help"><a href="help.html">Help</a></h4></li>
+                <li> <div class="algocode" ><h4>AlgoCode</h4></div></li>
+            </ul>
+            <div class="section1" onclick="window.location.href='index.html'" style="cursor: pointer;"><h4>ALGOVERSE</h4></div>
+            <div class="section2">
+               <li> <h4 class="about"><a href="about.html">About</a></h4></li>
+               <li> <h4 class="help"><a href="help.html">Help</a></h4></li>
+               <li  style="border:none;" > <div class="algocode" style="border:none;"><h4>AlgoCode</h4></div></li>
+               <li class="menu-button" onclick=showSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" fill="#fff" /></svg></li>
+            </div>
+        </nav>
+        
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h3>Skip List</h3>
+                <button class="close-btn" onclick="closeSidebar()" ><span class="material-symbols-outlined" id="close">
+                    close
+                    </span></button>
+            </div>
+            <ul>
+                <li class="has-submenu">
+                    <a href="javascript:void(0);" onclick="toggleSubmenu1()" class="menu-title">
+                        Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fa-solid fa-angle-down arrow-icon"></i>
+                    </a>
+                    <div class="submenu" id="submenu1">
+                        <div class="step-indicator">
+                            <div class="step" id="step1">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Theory" class="sidebar-link">Theory</a></div>
+                            </div>
+                            <div class="step" id="step2">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Advantages" class="sidebar-link">Advantages</a></div>
+                            </div>
+                            <div class="step" id="step3">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Disadvantages" class="sidebar-link">Disadvantages</a></div>
+                            </div>
+                            <div class="step" id="step4">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Applications" class="sidebar-link">Applications</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                
+                
+                <li class="has-submenu">
+                    <a href="javascript:void(0);" onclick="toggleSubmenu2()">Algorithm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fa-solid fa-angle-down arrow-icon2" ></i>
+                    </a>
+                    <ul class="submenu" id="submenu2">
+                        <div class="step-indicator2">
+                            <div class="step" id="step1">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#pseudocode">Pseudocode</a></div>
+                            </div>
+                            <div class="step" id="step2">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#example">Example</a></div>
+                            </div>
+                        </div>
+                    </ul>
+                </li>
+                
+                <li><a href="#Visualization">Visualization</a></li>
+                <li><a href="#tcomplexity" >Time complexity</a></li>
+                <li><a href="#scomplexity" >Space Complexity</a></li>
+            </ul>
+        </div>
+        
+    
+        <button class="menu-btn" onclick="openSidebar()"><span class="material-symbols-outlined" style="color:#fff;">
+            dock_to_left
+            </span></button>
+
+            <div class="content">
+                <div id="Theory" class="content-container">
+                    <div class="article-title">
+                        <h1>Skip List algorithm</h1>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                    <div class="text" style="height: auto; overflow: hidden;">
+                        <p dir="ltr" style="text-align: justify;">
+                            <b>Skip List</b> A skip list is a data structure that allows fast search, insertion, and deletion operations within a sorted sequence of elements.
+                        </p>
+                        <br>
+                        <p>
+                            It achieves this by maintaining multiple layers of linked lists, where each successive layer skips over fewer elements, reducing the number of steps needed to locate items.
+                        </p>
+                        <br><br>
+                        <h2>HOW IT WORKS?</h2>
+                        <p>
+                            The Skip List algorithm works by maintaining multiple levels of sorted linked lists, where each level provides "shortcuts" for fast traversal through the lower levels. The algorithm employs randomness to determine how elements are distributed across these levels, making it a probabilistic alternative to balanced binary trees.
+                        </p>
+                        <ol style="list-style: disc;">
+                            <li>Start at the top-left corner of the skip list (highest level, first node).</li>
+                            <li>Move right in the current level until:
+                                <ul style="list-style: disc; margin-left: 20px;">
+                                    <li>You find the target key.</li>
+                                    <li>You encounter a key larger than the target.</li>
+                                    <li>You reach the end of the level.</li>
+                                </ul>
+                            </li>
+                            <li>If the target is not found, move down one level and repeat the process.</li>
+                            <li>Continue until you reach the bottom level or find the target.</li>
+                        </ol>
+                    </div>
+                </div>
+            
+                     
+        
+        <!-- advantages -->
+        
+                <div id="Advantages" class="content-container">
+                    <div class="article-title text">
+                        <h1>Advantages</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <br><br>
+                    <div class="article-title text">
+                        
+                            <ol>
+                               
+                                    <ul>
+                                        <li><strong>Fast Operations:</strong> Skip lists support efficient search, insertion, and deletion operations with an average time complexity of  O(logn), making them competitive with balanced trees like AVL or Red-Black Trees.</li>
+                                   <br><br>
+                               
+                                
+                                        <li><strong>Simplicity:</strong>Skip lists are simpler to implement compared to self-balancing binary trees since they rely on probabilistic balancing rather than strict structural rules.</li><br><br>
+                                
+                                        <li><strong>Dynamic Updates:</strong>Adding or removing elements does not require complex rebalancing as in balanced trees. Instead, promotions or demotions are handled through randomness, which is simpler and faster.</li>
+                                    <br><br>
+                               
+                                   
+                                        <li><strong>Space Efficiency:</strong> Skip lists can be more space-efficient than some tree-based structures since pointers to higher levels are only added probabilistically.
+
+        
+                                        </li>
+                                   <br><br>
+                                
+                                   <li><strong>Flexibility: </strong> Skip lists can easily support range queries and ordered operations, such as finding all elements between two keys.
+                                   </li>
+                                   <br><br>
+                                   <li><strong>Probabilistic Guarantees: </strong> While the performance is not deterministic, the use of randomness ensures that the probability of poor performance is extremely low.
+                                   </li>
+                                   <br><br>
+                                   <li><strong>Concurrency:</strong> Skip lists can be adapted for concurrent environments more easily than trees, allowing for efficient parallel updates.
+                                   </li>
+                                   <br><br>
+                                </ul>
+                            </ol>
+                        
+                        
+                     </div>
+        
+                </div>
+        
+        
+        <!-- disadvantages -->
+        
+        
+                <div id="Disadvantages" class="content-container">
+                    <div class="article-title text">
+                        <h1>Disadvantages</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <br><br>
+                    <div class="article-title text">
+                        <ol>
+                            <ul>
+                                <li><strong>Dependence on Randomness:</strong>The performance depends on randomization for balancing, so there is no absolute worst-case guarantee (though the probability of poor performance is very low).
+                                    </li>
+                           <br><br>
+                       
+                        
+                                <li><strong>Higher Memory Usage:</strong>Skip lists generally require more memory than simple linked lists due to the additional pointers for higher levels.
+        
+                                </li><br><br>
+                        
+                                <li><strong>Unpredictable Behavior: </strong>Since balancing is probabilistic, it’s possible (though unlikely) to end up with suboptimal structures, which can degrade performance temporarily.
+                                </li>
+                            <br><br>
+                       
+                           
+                                <li><strong>Complexity for Large Levels:</strong> As the number of levels increases with the size of the list, the management of levels can become complex and less intuitive.
+        
+                                </li>
+                           <br><br>
+                        
+                           <li><strong>Slower for Small Datasets:</strong>For small datasets, the overhead of maintaining multiple levels may outweigh the benefits, making simpler structures like arrays or single linked lists more efficient.
+                           </li>
+                           <br><br>
+                           <li><strong>No Deterministic Balancing:</strong> Unlike AVL or Red-Black Trees, which guarantee a balanced structure, skip lists rely on probabilistic balancing, which may be undesirable in some applications.
+        
+                           </li>
+                           <br><br>
+                            
+                        </li>
+                        </ul>
+                        </ol>
+                    
+                     </div>
+        
+                </div>
+        
+        
+        <!-- applications -->
+        
+        
+                <div id="Applications" class="content-container">
+                    <div class="article-title text">
+                        <h1>Applications</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <br>
+                    <div class="article-title text">
+                        <ol>
+                            <ul>
+                                <li><strong> Databases and Key-Value Stores:</strong> Skip lists are used to manage ordered data efficiently.
+                                    They support fast search, insertion, and deletion, making them ideal for databases that require range queries or sorted access to data.
+                                    
+                                    </li>
+                           <br><br>
+                       
+                        
+                                <li><strong> Indexing and Caching:</strong> Skip lists can efficiently manage indexes for large datasets.
+                                    In caching systems, skip lists can maintain a sorted list of cache entries based on access time or priority, supporting quick insertion and retrieval.
+        
+        
+                                </li><br><br>
+                        
+                                <li><strong>Distributed Systems:</strong> Skip lists are lightweight and simple to implement, making them a good fit for distributed environments.Used for managing distributed hash tables (DHTs) and maintaining sorted replicas of distributed data.</li>
+                            <br><br>
+                       
+                           
+                                <li><strong>Range Queries:</strong>Skip lists naturally support range queries (finding all elements within a specific range) due to their ordered nature.
+        
+                                </li>
+                           <br><br>
+                        
+                           <li><strong>  Concurrent Data Structures: </strong> Skip lists are easier to adapt for concurrent environments compared to trees.
+                            Used in lock-free or thread-safe implementations of ordered sets or maps.
+        
+                           </li>
+                           <br><br>
+                           <li><strong> Memory-Constrained Environments:</strong> Skip lists require simpler memory management compared to balanced trees (like AVL or Red-Black trees).
+                            Used in environments where memory usage is a concern, such as embedded systems or low-power devices.
+        
+                           </li>
+                           <br><br>
+                
+                        </ul>
+                        </ol>
+                    
+                     </div>
+                </div>
+        
+        
+        
+                <!-- pseudocode -->
+        
+                <div id="pseudocode" class="content-container">
+                    <div class="article-title text">
+                        <h1>Pseudocode</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <br><br>
+        <div class="pseudo">
+            <div class="article-title text" style="border-radius: 7px; justify-content: center; align-items: center; margin-left: 4px; width: 90%;">
+                <h4 style="margin-left: 10px; font-size:15px;font-weight:600">SEARCH(skip_list, target_key): <br> <br>
+                    1. Start at the top-left node (head of the highest level).<br> <br>
+                    2. WHILE current_node is not NULL:
+                    <br> <br>
+                    &nbsp; &nbsp;Move right while (current_node.next != NULL AND current_node.next.key <= target_key):<br> <br>
+                   &nbsp; &nbsp; &nbsp; &nbsp;- current_node = current_node.next<br> <br>
+                   &nbsp; &nbsp;IF current_node.key == target_key:<br> <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; - RETURN current_node (found)<br> <br>
+                    &nbsp; &nbsp;ELSE:<br> <br>
+                   &nbsp; &nbsp; &nbsp;  &nbsp;- Move down one level (current_node = current_node.down)<br> <br>
+                    3. RETURN NULL (not found) <br> <br>
+                
+            
+                </h4><br>
+             </div>
+             <div class="article-title text">
+                <br>
+                <h1>Explanation</h1><br>
+              <p>Begin from the topmost level.</p><br>
+              <p>Move right in the current level until the next key is larger than the target or the target is found.</p><br>
+              <p>If the key is not found at the current level, move down to the next level and repeat.</p><br>
+             <p>Stop when you reach the bottom level or find the target key.</p><br>
+            
+            </div>
+             <br>
+        </div>
+                </div>
+        
+        <!-- flowchart -->
+        
+        
+
+        
+         
+        
+                <!-- example -->
+        
+                <div id="example" class="content-container" style="height:auto;">
+                    <br><br>
+                    <div class="article-title text">
+                        <h1>Example</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <p>
+                        <br><br>
+                        </p>
+                        <p>Level 3:  [1] -> [9] -> [19]  </p><br>
+                        <p>Level 2:  [1] -> [7] -> [19]  </p><br>
+                        <p>Level 1:  [1] -> [3] -> [7] -> [9] -> [17] -> [19] -> [21]  </p><br>
+                        <p>Level 0:  [1] -> [3] -> [7] -> [9] -> [12] -> [17] -> [19] -> [21] -> [25] </p><br>
+                        <p><strong>Explanation:</strong></p>
+                        <ol>
+                           <ul>
+                            
+                                
+                                <li>Level 0 is the base level and contains all the elements sorted in order.</li><br>
+                                <li>Level 1 skips over some elements, containing a subset of the elements from Level 0.</li><br>
+                                <li>Level 2 skips more elements, further reducing the number of nodes.</li><br>
+                                <li>Level 3 contains just the most significant elements (which act as shortcuts for the search).</li><br>
+                           </ul>
+                        </ol>
+                       
+                        </div>
+        
+        
+        
+                <!-- visualization -->
+        
+        
+                <div id="Visualization" class="content-container">
+                    <div class="article-title text">
+                        <h1>Visualization</h1>
+                    </div>
+                    <hr>
+                    <div class="cancel" onclick="normalscreen()">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <div class="skiplist">
+                        <!-- Level 3 -->
+                        <div class="level" id="level3">
+                            <div class="node" id="node1-3" data-next="1-8" value="1">+∞</div>
+                            <div class="node" id="node8-3" data-next="8-16">8</div>
+                            <div class="node" id="node16-3" data-next="16-16" value="14">-∞</div>
+                        </div>
+                        <!-- Level 2 -->
+                        <div class="level" id="level2">
+                            <div class="node" id="node1-2" data-next="1-4" value="1">+∞</div>
+                            <div class="node" id="node5-2" data-next="4-8">4</div>
+                            <div class="node" id="node8-2" data-next="8-12">8</div>
+                            <div class="node" id="node10-2" data-next="12-16">12</div>
+                            <div class="node" id="node16-2" data-next="16-16" value="14">-∞</div>
+                        </div>
+                        <!-- Level 1 -->
+                        <div class="level" id="level1">
+                            <div class="node" id="node1" data-next="1-2" value="1">+∞</div>
+                            <div class="node" id="node3" data-next="2-5">2</div>
+                            <div class="node" id="node5" data-next="4-6">4</div>
+                            <div class="node" id="node6" data-next="6-8">6</div>
+                            <div class="node" id="node8" data-next="8-10">8</div>
+                            <div class="node" id="node9" data-next="10-12">10</div>
+                            <div class="node" id="node10" data-next="12-14">12</div>
+                            <div class="node" id="node11" data-next="14-16">14</div>
+                            <div class="node" id="node16" data-next="16-16" value="14">-∞</div>
+                        </div>
+                        <!-- Level 0 -->
+                        <div class="level" id="level0">
+                            <div class="node" value="1">+∞</div>
+                            <div class="node">1</div>
+                            <div class="node">2</div>
+                            <div class="node">3</div>
+                            <div class="node">4</div>
+                            <div class="node">5</div>
+                            <div class="node">6</div>
+                            <div class="node">7</div>
+                            <div class="node">8</div>
+                            <div class="node">9</div>
+                            <div class="node">10</div>
+                            <div class="node">11</div>
+                            <div class="node">12</div>
+                            <div class="node">13</div>
+                            <div class="node">14</div>
+                            <div class="node" value="14">-∞</div>
+                        </div>
+                    </div>
+                    <div class="menu1">
+                        <div class="arrow1" onclick="showarrow1()">
+                            <i class="fa-solid fa-caret-left" style="color:aqua; font-size:30px;"></i>
+                        </div>
+                        <h1 class="data">Skip List</h1>
+                    </div>
+                    <div class="menu2">
+                        <div class="arrow2" onclick="showarrow2()">
+                            <i class="fa-solid fa-caret-left" style="color:aqua; font-size:30px;"></i>
+                        </div>
+                        <div class="menu2-info">
+                            <div class="code">
+                                <h4 class="e1">function skipListSearch(skipList, target):</h4><br>
+                                <h4 class="e2">&nbsp;&nbsp;&nbsp;&nbsp;CNode = skipList.head</h4>
+                                <h4 class="e3">&nbsp;&nbsp;&nbsp;&nbsp;while CNode is not null:</h4><br>
+                                <h4 class="e4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while CNode.next is not null and CNode.next.value < target:</h4><br>
+                                <h4 class="e5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CNode = CNode.next</h4><br>
+                                <h4 class="e6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if CNode.next is not null and CNode.next.value == target:</h4><br>
+                                <h4 class="e7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return CNode.next</h4>
+                                <h4 class="e8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CNode = CNode.down</h4>
+                                <h4 class="e9">&nbsp;&nbsp;&nbsp;&nbsp;return null</h4>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screen" onclick="fullscreen()"><i class="fa-solid fa-expand"></i></div>
+
+                        <div class="prompt">
+                            <div class="box-1">
+                                <button onclick="toggleWithDelay()" class="btn1-start">Start &nbsp; <i class="fa-solid fa-play"></i></button>
+                                <button  class="btn1-re-start none" id="restartButton">Restart&nbsp;<i class="fa-solid fa-arrow-rotate-left"></i></button>
+                            </div>
+                            <div class="box-2">
+                                <button onclick="pauseSearch()" class="btn2-pause" id="pauseButton">Pause &nbsp; <i class="fa-solid fa-pause"></i></button>
+                                <button onclick="resumeSearch()" class="btn2-resume none" id="resumeButton">Resume&nbsp;<i class="fa-regular fa-circle-play"></i></button>
+                            </div>
+                            <button onclick="expands()" class="create">key</button>
+                            <ul class="key-box">
+                                <h4>Enter Key:</h4>
+                                <input id="key-input" type="number">
+                                <button class="go">Go</button>
+                            </ul>
+                        </div>
+                                       
+                </div>
+                
+            
+                <div id="tcomplexity" class="content-container">
+                    <div class="article-title text">
+                        <h1>Complexity</h1>
+                        <hr><br>
+                    </div>
+                    <div id="complexity-analysis">
+                        <!-- This will display time and space complexity -->
+                    </div>
+                </div>
+                <div id="Explaination" class="content-container">
+                    <div class="article-title text">
+                        <h1>Visualization Explanation</h1>
+                        <hr><br>
+                        <div id="Explain">
+                        </div>
+                    </div>
+                </div>
+        <!-- time complexity -->
+                <div id="complexity" class="content-container">
+                    <div class="article-title text">
+                    <h1>Time complexity</h1>
+                 </div>
+                 <br>
+                 <hr><br><br>
+                 <p><strong>Definition:</strong> Time complexity measures the amount of time an algorithm takes to complete as a function of the size of the input. For skiplist, the time complexity can be expressed in different scenarios:</p>
+                 <br><br>
+                     <p><strong>Best-Case Time Complexity:O(log n)</strong></p><br>
+                       
+                             <p>In  best case, the skip list can skip over large portions of the list due to the multiple levels, leading to a time complexity of O(logn), where 
+                                n is the number of elements in the skip list.</p>
+                             <br><br>
+                     
+                             <p><strong>Average-Case Time Complexity:O(log n)</strong></p><br>
+                       
+                             <p>In average case too, the skip list can skip over large portions of the list due to the multiple levels, leading to a time complexity of O(logn), where 
+                                n is the number of elements in the skip list.</p>
+                             <br><br>
+                             <p><strong>Worst-Case Time Complexity:O(n)</strong></p><br>
+                       
+                             <p>The worst case occurs when the list is unbalanced, and all nodes are at the bottom level (i.e., the skip list is essentially a linked list). In this case, the search would require traversing the entire list, resulting in a time complexity of 
+                           O(n). However, this is extremely rare due to the probabilistic nature of the structure.</p>
+                             <br>
+             </div>
+        
+        
+        
+        <!-- space compleity -->
+        
+                <div id="scomplexity" class="content-container">
+                    <div class="article-title text">
+                    <h1>Space complexity</h1>
+                 </div>
+                 <br>
+                 <hr><br>
+              
+                 <p><strong>Definition:</strong> Space complexity measures the amount of memory an algorithm uses relative to the size of the input. For skiplist, the space complexity is straightforward:</p>
+                 <br><br>
+                       <p><strong>Space Complexity: O(n)</strong></p><br>
+                 <p>A skip list uses multiple levels of linked lists, and each node may be present in multiple levels.<br>
+                    On average, each level will contain half the number of elements as the previous level, due to the probabilistic nature of the promotion process.
+                    
+                    </p>
+                    <ol>
+                        <ul>
+                            <li>Level 0 will have all n elements.</li>
+                            <li>Level 1 will have roughly n/2 elements</li>
+                            <li>Level 2 will have roughly n/4 elements, and so on.</li>
+                        </ul>
+                    </ol>
+                    <p>Therefore, the total space complexity is  O(n), because the space used for each level is proportional to the number of elements, even though some levels will have fewer elements.</p>
+             
+                </div>
+            </div>
+
+
+
+<!-- script -->
+<script src="js/skiplist.js"></script>
+<script >
+    function openSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const menuBtn = document.querySelector('.menu-btn');
+    
+        sidebar.style.width = '280px'; // Set the sidebar width to its full size
+        sidebar.style.transform = 'translateX(0)'; // Slide the sidebar into view
+        menuBtn.style.display = 'none'; // Hide the menu button
+    }
+    function closeSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const menuBtn = document.querySelector('.menu-btn');
+    
+        sidebar.style.transform = 'translateX(-100%)'; // Slide the sidebar out of view
+        menuBtn.style.display = 'flex'; // Show the menu button
+    }
+    
+
+function toggleSubmenu1() {
+const submenu = document.getElementById("submenu1");
+submenu.classList.toggle("expanded");
+const arrowIcon = document.querySelector(".arrow-icon");
+arrowIcon.style.transform = submenu.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+
+}
+function toggleSubmenu2() {
+const submenu = document.getElementById("submenu2");
+submenu.classList.toggle("expanded");
+const arrowIcon = document.querySelector(".arrow-icon2");
+arrowIcon.style.transform = submenu.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+}
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+const sidebar = document.querySelector('.sidebar');
+
+sidebar.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('#')) {
+        e.preventDefault();
+        
+        const targetId = e.target.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            // Quickly scroll to the target element
+            window.scrollTo({
+                top: targetElement.offsetTop - 100, // Adjust for fixed header
+                behavior: 'auto' // No smooth scrolling, immediate jump
+            });
+
+            // Update active link immediately
+            document.querySelectorAll('.sidebar a').forEach(link => link.classList.remove('active'));
+            e.target.classList.add('active');
+        }
+    }
+});
+});
+
+
+window.onload = function() {
+document.getElementById("Visualization").scrollIntoView();
+};
+
+</script>
+
+ <!-- Bootstrap JS and dependencies -->
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ <script src="js/index2.js"></script>
+ <script>
+    function handleStepActivation(selector, stepClass) {
+        document.querySelectorAll(selector + ' .step a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default anchor behavior
+                
+                // Find the index of the clicked step
+                const clickedStepIndex = Array.from(this.closest('.step').parentNode.children).indexOf(this.closest('.step'));
+                // Reset all steps to default state
+                document.querySelectorAll(selector + ' .step').forEach((step, index) => {
+                    if (index < clickedStepIndex) {
+                        step.classList.add('active');
+                        step.querySelector('.line').style.backgroundColor = '#007bff';
+                    } else if (index === clickedStepIndex) {
+                        step.classList.add('active');
+                        step.querySelector('.line').style.backgroundColor = '#d3d3d3'; // Keep the line color of the clicked step default
+                    } else {
+                        step.classList.remove('active');
+                        step.querySelector('.line').style.backgroundColor = '#d3d3d3';
+                    }
+                });
+            });
+        });
+    }
+
+    // Handle steps for Description submenu
+    handleStepActivation('.has-submenu .step-indicator', 'step');
+
+    // Handle steps for Algorithm submenu
+    handleStepActivation('.has-submenu .step-indicator2', 'step');
+ </script>
+</body>
+</html>

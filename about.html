@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Responsive team section</title>
+	<link rel="stylesheet" type="text/css" href="css/about.css">
+    <link rel="icon" href="img/log.png" sizes="32x32">
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+	/* Footer styles */
+	.footer {
+		background-color: #153448;
+		color: white;
+		text-align: center;
+		padding: 20px 0;
+	}
+  
+	.footer a {
+		text-decoration: none;
+	}
+  
+	.footer a:hover {
+		text-decoration: underline;
+	}
+
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<nav class="navbar">
+        <ul class="sidebar">
+            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+            <li> <h4 class="about"><a href="about.html">About</a></h4></li>
+            <li> <h4 class="help"><a href="help.html">Help</a></h4></li>
+            <li> <button class="algocode" ><h4>AlgoCode</h4></button></li>
+        </ul>
+        <div class="section1" onclick="window.location.href='index.html'" style="cursor: pointer;"><h4>ALGOVERSE</h4></div>
+        <div class="section2">
+           <li> <h4 class="about"><a href="about.html">About</a></h4></li>
+           <li> <h4 class="help"><a href="help.html">Help</a></h4></li>
+           <li> <button class="algocode"><h4>AlgoCode</h4></button></li>
+           <li class="menu-button" onclick=showSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" fill="#fff" /></svg></li>
+        </div>
+    </nav>
+	<section class="info">
+	   <section class="clg">
+		<img src="img/logo-Anits.png" class="anits-logo"/>
+		<div class="title">
+			<h2>Anil Neerukonda Institute of Technology & Sciences</h2>	
+			<h3>Department of Computer Science And Engineering( AI&ML, DS )</h3>
+		</div>
+	
+	   </section>
+			<div class="mentor">
+				<h2 >Mentors</h2>
+            <div class="team-content" style="margin-top:-10px;">
+		     
+
+			<div class="box">
+				<img src="img/HOD.jpg" onclick="window.open('https://anits.irins.org/profile/182440', '_blank')">
+				<h3>K.Selvani Deepthi</h3>
+				<h5>Professor & HOD</h5>
+				<h5>CSE(AI&ML,DS)</h5>
+				<div class="icons">
+					<a href="#"><i class="ri-linkedin-box-fill"></i></a>
+					<a href="#"><i class="ri-facebook-box-fill"></i></a>
+					
+				</div>
+			</div>
+			<div class="box">
+				<img src="img/bhuvana.jpg">
+				<h3>M.V.Bhuvaneswari</h3>
+				<h5>Assistant Professor</h5>
+				<h5>CSE(AI&ML,DS)</h5>
+				<div class="icons">
+					<a href="#"><i class="ri-linkedin-box-fill"></i></a>
+					<a href="#"><i class="ri-facebook-box-fill"></i></a>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	</section>
+	<section class="team">
+		<div class="center">
+			<h1>Our Team</h1>
+		</div>
+		<div class="team-content">
+			<div class="box">
+				<img src="img/Bhanu.jpg" onclick="window.open('https://darlabhanu.github.io/My_Portfolio/', '_blank')" >
+				<h3>Bhanu Murthy</h3>
+				<h5>Designer & Developer</h5>
+				<h5>CSE(AI&ML)</h5>
+				<div class="icons">
+					<a href="https://www.linkedin.com/in/darla-bhanumurthy-1b24092b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="ri-linkedin-box-fill"></i></a>
+					<a href="#"><i class="ri-facebook-box-fill"></i></a>
+					<a href="https://www.instagram.com/bhanu_usr?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="ri-instagram-fill"></i></a>
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="img/akkhash.jpg" onclick="window.open('https://botchavarun.github.io/aux/', '_blank')">
+				<h3>Akkhash</h3>
+				<h5>Designer</h5>
+				<h5>CSE(AI&ML)</h5>
+				<div class="icons">
+					<a href="https://linkedin.com/in/akkhash-pilla-6b68a2275" target="_blank"><i class="ri-linkedin-box-fill"></i></a>
+					<a href="#"><i class="ri-facebook-box-fill"></i></a>
+					<a href="https://www.instagram.com/wild_champ__007?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="ri-instagram-fill"></i></a>
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="img/kalyan.png">
+				<h3>Kalyan</h3>
+				<h5>Developer</h5>
+				<h5>CSE(DS)</h5>
+				<div class="icons">
+					<a href="https://linkedin.com/in/kalyan-janu-335307310" target="_blank"><i class="ri-linkedin-box-fill"></i></a>
+					<a href="#"><i class="ri-facebook-box-fill"></i></a>
+					<a href="https://www.instagram.com/_.kalyan_janu?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="ri-instagram-fill"></i></a>
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="img/pavan.jpg">
+				<h3>Pavan Rishi</h3>
+				<h5>Developer</h5>
+				<h5>CSE(AI&ML)</h5>
+				<div class="icons">
+					<a href="https://linkedin.com/in/pavan-rishi-dimili-a1770430a" target="_blank"><i class="ri-linkedin-box-fill"></i></a>
+					<a href="#"><i class="ri-facebook-box-fill"></i></a>
+					<a href="https://www.instagram.com/the_swagster_004?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="ri-instagram-fill"></i></a>
+				</div>
+			</div>
+			<div class="box">
+				<img src="img/bhargav.png">
+				<h3>Bhargav</h3>
+				<h5>Developer</h5>
+				<h5>CSE(AI&ML)</h5>
+				<div class="icons">
+					<a href="https://linkedin.com/in/bhargav-vasupilli-980b59320" target="_blank"><i class="ri-linkedin-box-fill"></i></a>
+					<a href="#"><i class="ri-facebook-box-fill"></i></a>
+					<a href="https://www.instagram.com/___mr__nasty___?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="ri-instagram-fill"></i></a>
+				</div>
+			</div>
+			<div class="box">
+				<img src="img/janu.jpg">
+				<h3>Jahnavi</h3>
+				<h5>Designer & Developer</h5>
+				<h5>CSE(AI&ML)</h5>
+				<div class="icons">
+					<a href="https://linkedin.com/in/jahnavi-budi-4214a6321"><i class="ri-linkedin-box-fill"></i></a>
+					<a href="#"><i class="ri-facebook-box-fill"></i></a>
+					<a href="https://www.instagram.com/___jaan__ve__?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="ri-instagram-fill"></i></a>
+				</div>
+			</div>
+			<div class="box">
+				<img src="img/meghana.jpg">
+				<h3>Meghana</h3>
+				<h5>Designer & Developer</h5>
+				<h5>CSE</h5>
+				<div class="icons">
+					<a href="#"><i class="ri-linkedin-box-fill"></i></a>
+					<a href="#"><i class="ri-facebook-box-fill"></i></a>
+					<a href="https://www.instagram.com/_._._meghana/?utm_source=ig_web_button_share_sheet" target="_blank"><i class="ri-instagram-fill"></i></a>
+				</div>
+			</div>
+			<div class="box">
+				<img src="img/varun.jpg" onclick="window.open('https://botchavarun.github.io/portfolio/', '_blank')" ondblclick="window.open('cmd.html')">
+				<h3>Varun</h3>
+				<h5>Developer</h5>
+				<h5>CSE(AI&ML)</h5>
+				<div class="icons">
+					<a href="https://linkedin.com/in/varun-botcha-b35937275" target="_blank"><i class="ri-linkedin-box-fill"></i></a>
+					<a href="#"><i class="ri-facebook-box-fill"></i></a>
+					<a href="https://www.instagram.com/varun_botcha" target="_blank"><i class="ri-instagram-fill"></i></a>
+				</div>
+			</div>
+
+		</div>
+	</section>
+	<footer class="footer">
+		<div class="container text-center text-white py-3">
+			<p class="mb-0">&copy; 2024 Your Company. All Rights Reserved.</p>
+			<p>Contact us: <a href="mailto:varunbotcha77@gmail.com" class="text-white" style="text-decoration:none;color:white;cursor:pointer;">📫Mail</a></p>
+			<div>
+				<a href="#faq" class="text-white mx-2" style="text-decoration:none;cursor:pointer;">FAQ</a>
+				<a href="#privacy" class="text-white mx-2" style="text-decoration:none;cursor:pointer;">Privacy Policy</a>
+				<a href="#terms" class="text-white mx-2" style="text-decoration:none; cursor:pointer;">Terms of Service</a>
+			</div>
+		</div>
+	  </footer>
+	<script src="js/index.js"></script>
+</body>
+</html>

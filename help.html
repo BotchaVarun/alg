@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Page</title>
+    <link rel="icon" href="img/log.png" sizes="32x32">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/help.css">
+    <style>
+        .toggle-switch {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            border-radius: 50px;
+        }
+
+        .toggle-switch input[type="radio"] {
+            display: none;
+        }
+
+        .toggle-switch label {
+            padding: 10px 20px;
+            margin: 0;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            background-color: #f8f9fa;
+            color: #000;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-switch label.active {
+            background-color: #28a745;
+            color: #fff;
+            border-color: #28a745;
+        }
+        /* Footer styles */
+        .footer {
+            background-color: #153448;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+          
+        .footer a {
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+      
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="sidebar">
+            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+            <li> <h4 class="about"><a href="about.html">About</a></h4></li>
+            <li> <h4 class="help"><a href="help.html">Help</a></h4></li>
+            <li> <button class="algocode" ><h4>AlgoCode</h4></button></li>
+        </ul>
+        <div class="sections1" onclick="window.location.href='index.html'" style="cursor: pointer;"><h4>ALGOVERSE</h4></div>
+        <div class="sections2">
+           <li> <h4 class="about"><a href="about.html">About</a></h4></li>
+           <li> <h4 class="help"><a href="help.html">Help</a></h4></li>
+           <li> <button class="algocode"><h4>AlgoCode</h4></button></li>
+           <li class="menu-button" onclick=showSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" fill="#fff" /></svg></li>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <!-- FAQ Section -->
+        <section id="faq" class="mb-5">
+            <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <!-- Question 1 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faqHeading1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+                            How to control animation
+                        </button>
+                    </h2>
+                    <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Below the animation, there are four buttons: a Start button to begin the animation, a Pause button to pause it, a Resume button to continue the visualization from where it was paused, and a Restart button to restart the animation from the beginning.
+                        </div>
+                    </div>
+                </div>
+                 <!-- Question 2 -->
+                 <div class="accordion-item">
+                    <h2 class="accordion-header" id="faqHeading2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                            How can I submit feedback?
+                        </button>
+                    </h2>
+                    <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            You can submit your feedback by filling out the form in the Feedback section below. Provide your name, email, and detailed feedback to help us understand your needs better.
+                        </div>
+                    </div>
+                </div>
+                <!-- Question 3 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faqHeading3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                            Who can I contact for additional support?
+                        </button>
+                    </h2>
+                    <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            For additional support, you can reach out to our support team via the contact form or email us at support@example.com.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feedback and Join Us Section -->
+        <section id="feedback" class="mb-5">
+            <h2 class="text-center mb-4">We Value Your Input</h2>
+            
+            <!-- Toggle Switch -->
+            <div class="toggle-switch">
+                <input type="radio" id="feedbackOption" name="toggle" checked>
+                <label for="feedbackOption" class="active">Feedback</label>
+                <input type="radio" id="joinUsOption" name="toggle">
+                <label for="joinUsOption">Join Us</label>
+            </div>
+       
+            <!-- Feedback Form -->
+            <section id="feedback" class="mb-5">
+                <h2 class="text-center mb-4">We Value Your Feedback</h2>
+                <form id="feedbackForm" onsubmit="submitFeedback(event)">
+                    <div class="mb-3">
+                        <label for="feedbackName" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="feedbackName" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="feedbackEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="feedbackEmail" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="feedbackMessage" class="form-label">Message</label>
+                        <textarea class="form-control" id="feedbackMessage" rows="5" placeholder="Share your thoughts with us" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit Feedback</button>
+                </form>
+            </section>
+
+            <!-- Join Us Form -->
+            <div id="joinUsForm" style="display: none;">
+                <form id="joinUsFormSubmit" onsubmit="submitJoinUs(event)">
+                    <div class="mb-3">
+                        <label for="joinName" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="joinName" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="joinEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="joinEmail" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="joinPhone" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="joinPhone" placeholder="Your Phone Number" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="joinRole" class="form-label">Role</label>
+                        <select class="form-control" id="joinRole" required>
+                            <option value="">Select Role</option>
+                            <option value="Developer">Developer</option>
+                            <option value="Designer">Designer</option>
+                            <option value="Student">Student</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Join Us</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center text-white py-3">
+            <p class="mb-0">&copy; 2024 Your Company. All Rights Reserved.</p>
+            <p>Contact us: <a href="mailto:varunbotcha77@gmail.com" class="text-white" style="text-decoration:none;color:white;cursor:pointer;">📫Mail</a></p>
+            <div>
+                <a href="#faq" class="text-white mx-2" style="text-decoration:none;cursor:pointer;">FAQ</a>
+                <a href="#privacy" class="text-white mx-2" style="text-decoration:none;cursor:pointer;">Privacy Policy</a>
+                <a href="#terms" class="text-white mx-2" style="text-decoration:none; cursor:pointer;">Terms of Service</a>
+            </div>
+        </div>
+      </footer>
+    <script src="js/index.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const feedbackOption = document.getElementById('feedbackOption');
+        const joinUsOption = document.getElementById('joinUsOption');
+        const feedbackForm = document.getElementById('feedbackForm');
+        const joinUsForm = document.getElementById('joinUsForm');
+        const labels = document.querySelectorAll('.toggle-switch label');
+
+        feedbackOption.addEventListener('change', () => {
+            feedbackForm.style.display = 'block';
+            joinUsForm.style.display = 'none';
+            labels[0].classList.add('active');
+            labels[1].classList.remove('active');
+        });
+
+        joinUsOption.addEventListener('change', () => {
+            feedbackForm.style.display = 'none';
+            joinUsForm.style.display = 'block';
+            labels[1].classList.add('active');
+            labels[0].classList.remove('active');
+        });
+    </script>
+    <script>
+        function submitFeedback(event) {
+            event.preventDefault(); // Prevent form submission
+    
+            // Get form values
+            const name = document.getElementById('feedbackName').value;
+            const email = document.getElementById('feedbackEmail').value;
+            const message = document.getElementById('feedbackMessage').value;
+    
+            // Structure the email body
+            const emailBody = `Feedback from: ${name} (${email})\n\nMessage:\n${message}`;
+    
+            // Create the mailto link
+            const mailtoLink = `mailto:botchavarun.le23.csm@anits.edu.in?subject=Feedback from ${name}&body=${encodeURIComponent(emailBody)}`;
+    
+            // Open the default email client
+            window.location.href = mailtoLink;
+        }
+        function submitJoinUs(event) {
+            event.preventDefault(); // Prevent form submission
+    
+            // Get form values
+            const name = document.getElementById('joinName').value;
+            const email = document.getElementById('joinEmail').value;
+            const phone = document.getElementById('joinPhone').value;
+            const role = document.getElementById('joinRole').value;
+    
+            // Structure the email body
+            const emailBody = `Joining Request from: ${name} (${email})\nPhone: ${phone}\nRole: ${role}`;
+    
+            // Create the mailto link
+            const mailtoLink = `mailto:botchavarun.le23.csm@anits.edu.in?subject=Join Us Request from ${name}&body=${encodeURIComponent(emailBody)}`;
+    
+            // Open the default email client
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+</html>
