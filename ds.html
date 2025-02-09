@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures</title>
+    <link rel="stylesheet" href="css/ds.css">
+    <link rel="icon" href="img/log.png" sizes="32x32">
+    <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YNDYBX0K88');
+</script>
+
+</head>
+<body>
+  <nav class="navbar">
+    <ul class="sidebar">
+        <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+        <li> <h4 class="about"><a href="about.html">About</a></h4></li>
+        <li> <h4 class="help"><a href="help.html">Help</a></h4></li>
+        <li> <button class="algocode" ><h4>AlgoCode</h4></button></li>
+    </ul>
+    <div class="section1" onclick="window.location.href='index.html'" style="cursor: pointer;"><h4>ALGOVERSE</h4></div>
+    <div class="section2">
+       <li> <h4 class="about"><a href="about.html">About</a></h4></li>
+       <li> <h4 class="help"><a href="help.html">Help</a></h4></li>
+       <li> <button class="algocode"><h4>AlgoCode</h4></button></li>
+       <li class="menu-button" onclick=showSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" fill="#fff" /></svg></li>
+    </div>
+</nav>
+
+  <div class="container">
+      <h1>Data Structures</h1>
+      <div class="spacer" ></div>
+      <p>Data structures are the fundamental building blocks of computer programming. They define how data is organized, stored, and manipulated within a program. Understanding data structures is very important for developing efficient and effective algorithms. In this tutorial, we will explore the most commonly used data structures, including arrays, linked lists, stacks, queues, trees, and graphs.</p>           
+  </div>
+  <div class="header" id="sortings">
+    <div><h1 class="heading-title">Sortings</h1></div>
+    <div class="team-content">
+			<div class="item" onmouseover="playbubbleGif()" onmouseleave="stopbubbleGif()">
+        <img src="img/BUBBLESORT.png" id="bubble" alt="another page" onclick="window.location.href='bubble_sort.html'">
+        <button class="algo-code-button1" onclick="window.location.href='bubble_sort.html'">Bubble Sort</button>
+			</div>
+			<div class="item" onmouseover="playmergeGif()" onmouseleave="stopmergeGif()">
+        <img src="img/MERGESORT.png" alt="" id="merge" onclick="window.location.href='merge_sort.html'">
+        <button class="algo-code-button1" onclick="window.location.href='merge_sort.html'">merge sort</button> 
+			</div>
+			<div class="item" onmouseover="playselectionGif()" onmouseleave="stopselectionGif()">
+        <img src="img/SELECTIONSORT.png" alt="" id="selection" onclick="window.location.href='selection_sort.html'">
+        <button class="algo-code-button1" onclick="window.location.href='selection_sort.html'">selection sort</button> 
+			</div>
+			<div class="item" onmouseover="playinsertionGif()" onmouseleave="stopinsertionGif()">
+        <img src="img/INSERTIONSORT.png" id="insertion" alt="" onclick="window.location.href='insertion_sort.html'">
+        <button class="algo-code-button1" onclick="window.location.href='insertion_sort.html'">insertion sort</button> 
+			</div>
+    </div>
+  </div>
+    <!-- <div class="data">       
+      <div class="item" onmouseover="playbubbleGif()" onmouseleave="stopbubbleGif()">
+          <img src="img/BUBBLESORT.png" id="bubble" alt="another page" onclick="window.location.href='bubble_sort.html'">
+          <button class="algo-code-button1" onclick="window.location.href='bubble_sort.html'">Bubble Sort</button>
+      </div>
+      <div class="item" onmouseover="playmergeGif()" onmouseleave="stopmergeGif()">
+          <img src="img/MERGESORT.png" alt="" id="merge" onclick="window.location.href='merge_sort.html'">
+          <button class="algo-code-button1" onclick="window.location.href='merge_sort.html'">merge sort</button> 
+      </div>
+      <div class="item" onmouseover="playselectionGif()" onmouseleave="stopselectionGif()">
+          <img src="img/SELECTIONSORT.png" alt="" id="selection" onclick="window.location.href='selection_sort.html'">
+          <button class="algo-code-button1" onclick="window.location.href='selection_sort.html'">selection sort</button> 
+      </div>
+      <div class="item" onmouseover="playinsertionGif()" onmouseleave="stopinsertionGif()">
+            <img src="img/INSERTIONSORT.png" id="insertion" alt="" onclick="window.location.href='insertion_sort.html'">
+            <button class="algo-code-button1" onclick="window.location.href='insertion_sort.html'">insertion sort</button> 
+      </div>
+    </div>   -->
+  </div>
+
+                <!-- sortings -->
+
+<div class="spacer1"></div>
+
+<div class="header" id="searchings" style="margin-top:20px;height: 80vh;">
+    <div><h1 class="heading-title">Searchings</h1></div>
+    <div class="team-content">
+    <div class="item" onmouseover="playLinearGif()" onmouseleave="stopLinearGif()">
+      <img src="img/LINEARSEARCH.png" id="linear" alt="" onclick="window.location.href='linear_search.html'">
+      <button class="algo-code-button1" onclick="window.location.href='linear_search.html'">Linear Search</button>
+    </div>
+    <div class="item" onmouseover="playBinaryGif()" onmouseleave="stopBinaryGif()">
+      <img src="img/BINARY.png" id="binary" alt="" id="binary-image" onclick="window.location.href='binary_search.html'">
+        <button class="algo-code-button1" onclick="window.location.href='binary_search.html'">Binary Search</button>
+    </div>
+    <div class="item" onmouseover="playSkiplistGif()" onmouseleave="stopSkiplistGif()">
+      <img src="img/skiplist.jpg" id="skip" alt="" id="skiplist-image" onclick="window.location.href='skiplist.html'">
+      <button class="algo-code-button1" onclick="window.location.href='skiplist.html'">Perfect Skip List</button>
+    </div>
+   </div>
+    <!-- <div class="data">       
+        <div class="item" onmouseover="playLinearGif()" onmouseleave="stopLinearGif()">
+         <img src="img/LINEARSEARCH.png" id="linear" alt="" onclick="window.location.href='linear_search.html'">
+         <button class="algo-code-button1" onclick="window.location.href='linear_search.html'">Linear Search</button> 
+      </div>
+      <div class="item" onmouseover="playBinaryGif()" onmouseleave="stopBinaryGif()">
+        <img src="img/BINARY.png" id="binary" alt="" id="binary-image" onclick="window.location.href='binary_search.html'">
+        <button class="algo-code-button1" onclick="window.location.href='binary_search.html'">Binary Search</button>
+      </div>
+      
+      <div class="item" onmouseover="playSkiplistGif()" onmouseleave="stopSkiplistGif()">
+        <img src="img/skiplist.jpg" id="skip" alt="" id="skiplist-image" onclick="window.location.href='skiplist.html'">
+        <button class="algo-code-button1" onclick="window.location.href='skiplist.html'">Perfect Skip List</button>
+      </div>      
+     </div>   -->
+</div>
+
+
+
+
+
+
+<script>let playing = false;
+
+    function playGif(imageId, gifSrc, imgSrc) {
+      const img = document.getElementById(imageId);
+      if (!playing) {
+        img.src = gifSrc;
+        playing = true;
+      }
+    }
+    
+    function stopGif(imageId, imgSrc) {
+      const img = document.getElementById(imageId);
+      if (playing) {
+        img.src = imgSrc;
+        playing = false;
+      }
+    }
+    
+    // Example usage for skiplist gif
+    function playSkiplistGif() {
+      playGif('skip', 'img/skiplist.gif', 'img/skiplist.jpg');
+    }
+    
+    function stopSkiplistGif() {
+      stopGif('skip', 'img/skiplist.jpg');
+    }
+    
+    // Example usage for binary gif
+    function playBinaryGif() {
+      playGif('binary', 'img/binary.gif', 'img/BINARY.png');
+    }
+    function stopBinaryGif() {
+      stopGif('binary', 'img/BINARY.png');
+    }
+    // Example usage for linear gif
+    function playLinearGif() {
+      playGif('linear', 'img/linearsearch.gif', 'img/LINEARSEARCH.png');
+    }
+    function stopLinearGif() {
+      stopGif('linear', 'img/LINEARSEARCH.png');
+    }
+    // Example usage for linear gif
+    function playLinearGif() {
+      playGif('linear', 'img/linearsearch.gif', 'img/LINEARSEARCH.png');
+    }
+    function stopLinearGif() {
+      stopGif('linear', 'img/LINEARSEARCH.png');
+    }
+    // Example usage for bubble gif
+    function playbubbleGif() {
+      playGif('bubble', 'img/bubble.gif', 'img/BUBBLESORT.png');
+    }
+    function stopbubbleGif() {
+      stopGif('bubble', 'img/BUBBLESORT.png');
+    }
+    // Example usage for selection gif
+    function playselectionGif() {
+      playGif('selection', 'img/selection.gif', 'img/SELECTIONSORT.png');
+    }
+    function stopselectionGif() {
+      stopGif('selection', 'img/SELECTIONSORT.png');
+    }
+    // Example usage for insertion gif
+    function playinsertionGif() {
+      playGif('insertion', 'img/insertion.gif', 'img/INSERTIONSORT.png');
+    }
+    function stopinsertionGif() {
+      stopGif('insertion', 'img/INSERTIONSORT.png');
+    }
+    // Example usage for merge gif
+    function playmergeGif() {
+      playGif('merge', 'img/merge.gif', 'img/MERGESORT.png');
+    }
+    function stopmergeGif() {
+      stopGif('merge', 'img/MERGESORT.png');
+    }
+</script>
+<script src="js/index.js"></script>
+</body>
+</html>

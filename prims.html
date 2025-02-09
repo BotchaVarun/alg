@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PRIMS</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="icon" href="img/log.png" sizes="32x32">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/main.css">
+        
+        <link rel="stylesheet" href="css/prims.css">
+    </head>
+    <body>
+    
+        <nav class="navbar">
+            <ul class="slidebar">
+                <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+                <li> <h4 class="about"><a href="about.html">About</a></h4></li>
+                <li> <h4 class="help"><a href="help.html">Help</a></h4></li>
+                <li> <div class="algocode" ><h4>AlgoCode</h4></div></li>
+            </ul>
+            <div class="section1" onclick="window.location.href='index.html'" style="cursor: pointer;"><h4>ALGOVERSE</h4></div>
+            <div class="section2">
+               <li> <h4 class="about"><a href="about.html">About</a></h4></li>
+               <li> <h4 class="help"><a href="help.html">Help</a></h4></li>
+               <li  style="border:none;" > <div class="algocode" style="border:none;"><h4>AlgoCode</h4></div></li>
+               <li class="menu-button" onclick=showSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" fill="#fff" /></svg></li>
+            </div>
+        </nav>
+        
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h3>Prims Algoithm</h3>
+                <button class="close-btn" onclick="closeSidebar()" ><span class="material-symbols-outlined" id="close">
+                    close
+                    </span></button>
+            </div>
+            <ul>
+                <li class="has-submenu">
+                    <a href="javascript:void(0);" onclick="toggleSubmenu1()" class="menu-title">
+                        Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fa-solid fa-angle-down arrow-icon"></i>
+                    </a>
+                    <div class="submenu" id="submenu1">
+                        <div class="step-indicator">
+                            <div class="step" id="step1">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Theory" class="sidebar-link">Theory</a></div>
+                            </div>
+                            <div class="step" id="step2">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Advantages" class="sidebar-link">Advantages</a></div>
+                            </div>
+                            <div class="step" id="step3">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Disadvantages" class="sidebar-link">Disadvantages</a></div>
+                            </div>
+                            <div class="step" id="step4">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Applications" class="sidebar-link">Applications</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                
+                
+                <li class="has-submenu">
+                    <a href="javascript:void(0);" onclick="toggleSubmenu2()">Algorithm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fa-solid fa-angle-down arrow-icon2" ></i>
+                    </a>
+                    <ul class="submenu" id="submenu2">
+                        <div class="step-indicator2">
+                            <div class="step" id="step1">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#pseudocode">Pseudocode</a></div>
+                            </div>
+                            <div class="step" id="step2">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#example">Example</a></div>
+                            </div>
+                        </div>
+                    </ul>
+                </li>
+                
+                <li><a href="#Visualization">Visualization</a></li>
+                <li><a href="#tcomplexity" >Time complexity</a></li>
+                <li><a href="#scomplexity" >Space Complexity</a></li>
+            </ul>
+        </div>
+        
+    
+        <button class="menu-btn" onclick="openSidebar()"><span class="material-symbols-outlined" style="color:#fff;">
+            dock_to_left
+            </span></button>
+
+            <div class="content">
+                <div id="Theory" class="content-container">
+                    
+                     <div class="article-title">
+                       <h1> Prims algorithm </h1>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                    <div class="text" style="height: auto; overflow: hidden;">
+                        <p dir="ltr" style="text-align: justify;">
+        
+                           <b> Prims algorithm Minimum Spanning Tree (MST) : </b> </p><br> <p> Prim's algorithm is a greedy algorithm used to find the Minimum Spanning Tree (MST) of a connected, undirected graph. A Minimum Spanning Tree is a subset of edges that connects all the vertices in the graph, without any cycles, and with the minimum possible total edge weight.</p>
+                        <p dir="ltr" style="text-align: justify;">
+                            <h2>HOW IT WORKS?</h2>
+                            <p>
+                                <li><strong></strong>Start with any vertex and create a set to track included nodes and a priority queue for edges.</li>
+                                   <br><br>
+                                <li><strong></strong>Add the starting vertex to the set and insert its edges into the priority queue.</li>
+                                   <br><br>
+                                <li><strong></strong>Pick the edge with the minimum weight connecting a node in the set to one outside it..</li>
+                                   <br><br>
+                                <li><strong></strong>Add the new node to the set and repeat until all nodes are included.</li>
+                                   <br><br>
+                                <li><strong></strong>The algorithm ends when all vertices are in the MST.</li>
+                                   <br><br>
+                                
+                            </p>
+                            <ol>
+                                <li></li>
+                                    <ul>
+                                    </ul>
+                                </li>
+                                <b></b>
+                                <li></li>
+                            </ol>
+                            
+                            
+                        </div>
+                    </div>
+        
+        <!-- advantages -->
+        
+                <div id="Advantages" class="content-container">
+                    <div class="article-title text">
+                        <h1>Advantages</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <br><br>
+                    <div class="article-title text">
+                        
+                            <ol>
+                               
+                                    <ul>
+                                        <li><strong>Efficiency:</strong>Prim's algorithm is more efficient for dense graphs compared to other MST algorithms like Kruskal's. In a dense graph, the number of edges is close to the square of the number of vertices (O(V²)).</li>
+                                   <br><br>
+                                        <li><strong>Optimal Solution:</strong>It guarantees the minimum spanning tree by selecting edges that lead to the least total weight.</li><br><br>
+                                
+                                        <li><strong>Simplicity:</strong>The algorithm is straightforward and easy to implement.</li>
+                                    <br><br>
+                               
+                                   
+                                        <li><strong>Works for All Graphs:</strong>Prim's algorithm works on both connected and weighted undirected graphs.
+
+        
+                                        </li>
+                                   <br><br>
+                                </ul>
+                            </ol>
+                        
+                        
+                     </div>
+        
+                </div>
+        
+        
+        <!-- disadvantages -->
+        
+        
+                <div id="Disadvantages" class="content-container">
+                    <div class="article-title text">
+                        <h1>Disadvantages</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <br><br>
+                    <div class="article-title text">
+                        <ol>
+                            <ul>
+                                <li><strong>Requires the Graph to Be Connected:</strong>Prim’s algorithm only works for connected graphs. If the graph is disconnected, the algorithm will not produce an MST.
+                                    </li>
+                           <br><br>
+                       
+                        
+                                <li><strong>High Space Complexity for Sparse Graphs:</strong>For sparse graphs (graphs with fewer edges), the algorithm can still use a lot of memory for maintaining priority queues and other structures.
+                        
+                                <li><strong>Implementation Complexity:</strong>he algorithm requires more advanced data structures, such as priority queues (or Fibonacci heaps), to achieve optimal performanc
+                                </li>
+                            <br><br>
+                       
+                           
+                                <li><strong>Not Efficient for Sparse Graphs (Edge Count Much Smaller Than V²):</strong> Prim’s algorithm is less efficient in cases where the graph has a relatively low edge-to-vertex ratio..
+                                </li>
+                           <br><br>
+                            
+                        </li>
+                        </ul>
+                        </ol>
+                    
+                     </div>
+        
+                </div>
+        
+        
+        <!-- applications -->
+        
+        
+                <div id="Applications" class="content-container">
+                    <div class="article-title text">
+                        <h1>Applications</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <br>
+                    <div class="article-title text">
+                        <ol>
+                            <ul>
+                                <li><strong>Network Design:</strong> Telecommunications: Used to design the most cost-effective networks, such as for laying cables between cities or connecting computer networks while minimizing costs.
+                                    
+                                    </li>
+                           <br><br>
+                       
+                        
+                                <li><strong>Cluster Analysis:</strong>In clustering problems, Prim’s algorithm can help in finding the minimum cost to connect elements in a cluster.
+        
+                                </li><br><br>
+                        
+                                <li><strong>Routing Problems:</strong>Used in designing routes for network traffic or transportation networks.</li>
+                            <br><br>
+                       
+                           
+                                <li><strong>Circuit Design:</strong>In VLSI (Very Large Scale Integration) design, Prim’s algorithm can be used to design the minimum-cost wiring layout for circuits.
+
+        
+                                </li>
+                           <br><br>
+                        
+                           <li><strong>Social Network Analysis:</strong>Prim’s algorithm can be used to identify the minimum connection between different members or communities in a network, like finding minimum cost of connection between users.
+                           </li>
+                           <br><br>
+                           <br><br>
+                
+                        </ul>
+                        </ol>
+                    
+                     </div>
+                </div>
+        
+        
+        
+                <!-- pseudocode -->
+        
+                <div id="pseudocode" class="content-container">
+                    <div class="article-title text">
+                        <h1>Pseudocode</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <br><br>
+        <div class="pseudo">
+            <div class="article-title text" style="border-radius: 7px; justify-content: center; align-items: center; margin-left: 4px; width: 90%;">
+                <h4 style="margin-left: 10px; font-size:15px;font-weight:600">PRIM_MST(graph): <br> <br>
+                    1.Initialize MST as empty, and start with any vertex.<br> <br>
+                    2.Create a priority queue for edges and add edges from the starting vertex.<br> <br>
+                    3. WHILE priority queue is not empty:<br> <br>
+                    4.Extract the minimum weight edge (u, v).<br> <br>
+                    <b>5. IF v is not in MST:</b><br> 
+                    &nbsp; &nbsp;- Add edge (u, v) to MST and add v to the MST.<br> <br>
+                   &nbsp; &nbsp; &nbsp; &nbsp;  - Add edges from v to the priority queue.<br> <br>
+                   6. RETURN MST.<br> <br>
+                
+            
+                </h4><br>
+             </div>
+             <div class="article-title text">
+                <br>
+                <h1>Explanation</h1><br>
+              <p>1.Start with an arbitrary vertex and initialize an empty Minimum Spanning Tree (MST).</p><br>
+              <p>2.Use a priority queue to store edges, sorted by their weights.</p><br>
+              <p>3.Add all edges connected to the starting vertex into the priority queue.
+            </p><br>
+            <p>4.Extract the minimum weight edge from the priority queue that connects a vertex in the MST to one outside the MST.</p><br>
+             <p>5.Add the edge to the MST and include the new vertex in the MST. Repeat until all vertices are included in the MST.</p><br>
+             <p>This process ensures that we grow the MST by always selecting the smallest edge connecting a new vertex.</p><br>
+            
+            </div>
+             <br>
+        </div>
+                </div>
+        
+        <!-- flowchart -->
+        
+        
+
+        
+         
+        
+                <!-- example -->
+        
+                <div id="example" class="content-container" style="height:auto;">
+                    <br><br>
+                    <div class="article-title text">
+                        <h1>Example</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <p>
+                        <br><br>
+                        </p>
+                        <b>Edge	Weights : </b>
+                        <p>(A-B, 4) </p><br>
+                        <p>(A-C, 1) </p><br>
+                        <p>(B-C, 2) </p><br>
+                        <p>(B-D, 3)</p><br>
+                        <p>(C-D, 5)</p><br>
+                        <p><strong>Explanation:</strong></p>
+                        <ol>
+                           <ul>
+                            
+                                
+                                <li>Start with any vertex (A) and add edges connected to it.</li><br>
+                                <li>Sorted edges: (A-C, 1), (A-B, 4), (B-C, 2), (B-D, 3), (C-D, 5)..</li><br>
+                                <li>Initialize MST: </li><br>
+                                <b><li>Add edges in order:</li><br></b>
+                                <li>Add (A-C, 1), (C-B, 2), (B-D, 3) to MST.
+                                    </li><br>
+                                <li>Stop when MST has 3 edges (V-1).</li><br>
+                                    <b><li>MST:</li><br></b>
+                                    <b><li>
+                                        Edges: (A-C), (C-B), (B-D)</li><br></b>
+                                    <b><li>Total weight: 1 + 2 + 3 = 6.</li><br></b>
+                           </ul>
+                        </ol>
+                       
+                        </div>
+        
+        
+        
+                <!-- visualization -->
+        
+        
+                <div id="Visualization" class="content-container">
+                    <div class="article-title text">
+                        <h1>Visualization</h1>
+                    </div>
+                    <hr>
+                    <div class="cancel" onclick="normalscreen()">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <div id="graph-container"></div>
+                    <div id="controls">
+                        <button id="start-btn" title="Start the MST visualization">Start Visualization</button>
+                        <button id="pause-btn" title="Pause the visualization" disabled>Pause</button>
+                        <button id="resume-btn" title="Resume the visualization" disabled>Resume</button>
+                        <button id="reset-btn" title="Reset the graph" disabled>Reset</button>
+                    </div>
+                    <div class="menu1">
+                        <div class="arrow1" onclick="showarrow1()">
+                            <i class="fa-solid fa-caret-left" style="color:aqua; font-size:30px;"></i>
+                        </div>
+                        <h1 class="data">Prims Algorithm</h1>
+                    </div>
+                    <div class="menu2">
+                        <div class="arrow2" onclick="showarrow2()">
+                            <i class="fa-solid fa-caret-left" style="color:aqua; font-size:30px;"></i>
+                        </div>
+                        <div class="menu2-info">
+                            <div class="code">
+                                <h4 class="e1">PRIMS_MST(Graph):</h4><br>
+                                <h4 class="e2">&nbsp;&nbsp;&nbsp;&nbsp;T = {s}</h4><br>
+                                <h4 class="e3">&nbsp;&nbsp;&nbsp;&nbsp;enqueue edges connected to s in PQ (by inc weight)</h4><br>
+                                <h4 class="e4">&nbsp;&nbsp;&nbsp;&nbsp;while (!PQ.isEmpty)</h4><br>
+                                <h4 class="e5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (vertex v linked with e = PQ.remove ∉ T)</h4><br>
+                                <h4 class="e6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  T = T ∪ {v, e}, enqueue edges connected to v
+                                </h4><br>
+                                <h4 class="e7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else ignore e</h4>
+                                <h4 class="e8">&nbsp;&nbsp;&nbsp;&nbsp;MST = T </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screen" onclick="fullscreen()">
+                        <i class="fa-solid fa-expand"></i>
+                    </div>
+                </div>
+                <div id="tcomplexity" class="content-container">
+                    <div class="article-title text">
+                        <h1>Complexity</h1>
+                        <hr><br>
+                    </div>
+                    <div id="complexity-analysis">
+                        <!-- This will display time and space complexity -->
+                    </div>
+                </div>
+                <div id="Explaination" class="content-container">
+                    <div class="article-title text">
+                        <h1>Visualization Explanation</h1>
+                        <hr><br>
+                        <div id="Explain">
+                        </div>
+                    </div>
+                </div>
+        <!-- time complexity -->
+                <div id="complexity" class="content-container">
+                    <div class="article-title text">
+                    <h1>Time complexity</h1>
+                 </div>
+                 <br>
+                 <hr><br><br>
+                 <p><strong>Definition:</strong>Time complexity measures the amount of time Prim's algorithm takes to compute the Minimum Spanning Tree (MST) as a function of the size of the input graph, characterized by the number of vertices 
+                    𝑉
+                    V and edges 
+                    𝐸
+                    E. It reflects the cost of using a priority queue to select the minimum weight edge and updating the set of vertices included in the MST.</p>
+                 <br><br>
+                     <p><strong>Best-Case Time Complexity :
+                        𝑂
+                        (
+                        𝐸
+                        +
+                        𝑉
+                        log
+                        ⁡
+                        𝑉
+                        )
+                        O(E+VlogV)</strong></p><br>
+                       
+                             <p>
+                                In the best case, the graph is sparse, and there are fewer edges. The priority queue operations dominate the time complexity, with a minimal number of vertices and edges to process.</p>
+                             <br><br>
+                     
+                             <p><strong>Average-Case Time Complexity:O(ElogV)</strong></p><br>
+                       
+                             <p>On average, the algorithm requires sorting and updating the priority queue for every edge and vertex. Since the priority queue is updated for each edge, the complexity is driven by the logarithmic operations on the queue.
+
+                             </p>
+                             <br><br>
+                             <p><strong>Worst-Case Time Complexity:O(ElogV)</strong></p><br>
+                       
+                             <p>In the worst case, the graph is dense, with many edges. The time complexity arises primarily from the priority queue operations, where each edge requires a logarithmic update in the queue, and the process continues until all vertices are included in the MST.</p>
+                             <br>
+             </div>
+        
+        
+        
+        <!-- space compleity -->
+        
+                <div id="scomplexity" class="content-container">
+                    <div class="article-title text">
+                    <h1>Space complexity</h1>
+                 </div>
+                 <br>
+                 <hr><br>
+              
+                 <p><strong>Definition:</strong>Definition: Space complexity measures the amount of memory Prim's algorithm requires to compute the Minimum Spanning Tree (MST) as a function of the size of the input graph. It accounts for storing the graph's edges, the priority queue for selecting edges, and the set of vertices included in the MST. The overall space complexity depends on the number of vertices 
+                    𝑉
+                    V and edges 
+                    𝐸
+                    E.</p>
+                 <br><br>
+                       <p><strong>Space Complexity: 
+                        𝑂
+                        (
+                        𝑉
+                        +
+                        𝐸
+                        )
+                        O(V+E)</strong></p><br>
+                 <p><br>The total space complexity is 
+𝑂
+(
+𝑉
++
+𝐸
+)
+O(V+E), accounting for storing the graph and managing the priority queue and MST set.
+                    </p><br>
+                    <ol>
+                    </ol>
+                    <b>Summary: </b>
+                    <p>Prim’s algorithm efficiently finds the Minimum Spanning Tree (MST) by iteratively selecting the minimum weight edge using a priority queue. Its space complexity is dominated by storing the graph and maintaining the priority queue, and it is 
+                        𝑂
+                        (
+                        𝑉
+                        +
+                        𝐸
+                        )
+                        O(V+E).</p>
+             
+                </div>
+            </div>
+
+
+
+<!-- script -->
+<script src="js/prims.js"></script>
+<script >
+    function openSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const menuBtn = document.querySelector('.menu-btn');
+    
+        sidebar.style.width = '280px'; // Set the sidebar width to its full size
+        sidebar.style.transform = 'translateX(0)'; // Slide the sidebar into view
+        menuBtn.style.display = 'none'; // Hide the menu button
+    }
+    function closeSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const menuBtn = document.querySelector('.menu-btn');
+    
+        sidebar.style.transform = 'translateX(-100%)'; // Slide the sidebar out of view
+        menuBtn.style.display = 'flex'; // Show the menu button
+    }
+    
+
+function toggleSubmenu1() {
+const submenu = document.getElementById("submenu1");
+submenu.classList.toggle("expanded");
+const arrowIcon = document.querySelector(".arrow-icon");
+arrowIcon.style.transform = submenu.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+}
+function toggleSubmenu2() {
+const submenu = document.getElementById("submenu2");
+submenu.classList.toggle("expanded");
+const arrowIcon = document.querySelector(".arrow-icon2");
+arrowIcon.style.transform = submenu.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+}
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+const sidebar = document.querySelector('.sidebar');
+
+sidebar.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('#')) {
+        e.preventDefault();
+        
+        const targetId = e.target.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            // Quickly scroll to the target element
+            window.scrollTo({
+                top: targetElement.offsetTop - 100, // Adjust for fixed header
+                behavior: 'auto' // No smooth scrolling, immediate jump
+            });
+
+            // Update active link immediately
+            document.querySelectorAll('.sidebar a').forEach(link => link.classList.remove('active'));
+            e.target.classList.add('active');
+        }
+    }
+});
+});
+
+
+window.onload = function() {
+document.getElementById("Visualization").scrollIntoView();
+};
+
+</script>
+
+ <!-- Bootstrap JS and dependencies -->
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ <script src="js/index2.js"></script>
+ <script>
+    function handleStepActivation(selector, stepClass) {
+        document.querySelectorAll(selector + ' .step a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default anchor behavior
+                
+                // Find the index of the clicked step
+                const clickedStepIndex = Array.from(this.closest('.step').parentNode.children).indexOf(this.closest('.step'));
+                // Reset all steps to default state
+                document.querySelectorAll(selector + ' .step').forEach((step, index) => {
+                    if (index < clickedStepIndex) {
+                        step.classList.add('active');
+                        step.querySelector('.line').style.backgroundColor = '#007bff';
+                    } else if (index === clickedStepIndex) {
+                        step.classList.add('active');
+                        step.querySelector('.line').style.backgroundColor = '#d3d3d3'; // Keep the line color of the clicked step default
+                    } else {
+                        step.classList.remove('active');
+                        step.querySelector('.line').style.backgroundColor = '#d3d3d3';
+                    }
+                });
+            });
+        });
+    }
+
+    // Handle steps for Description submenu
+    handleStepActivation('.has-submenu .step-indicator', 'step');
+
+    // Handle steps for Algorithm submenu
+    handleStepActivation('.has-submenu .step-indicator2', 'step');
+ </script>
+</body>
+</html>

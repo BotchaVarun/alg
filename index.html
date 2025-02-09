@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="img/log.png" sizes="32x32">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <style>
+      /* Footer styles */
+      .footer {
+          background-color: #153448;
+          color: white;
+          text-align: center;
+          padding: 20px 0;
+      }
+    
+      .footer a {
+          text-decoration: none;
+      }
+    
+      .footer a:hover {
+          text-decoration: underline;
+      }
+
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YNDYBX0K88"></script>
+    <script src="https://cdn.vercel.com/analytics.js"></script>
+<script>
+  // Assuming the analytics script provides a global `vercelAnalytics` object
+  vercelAnalytics.init(); // Replace with actual initialization method if different
+</script>
+<script>
+  // Example: Initialize Vercel Analytics
+  function initAnalytics() {
+    if (typeof inject === 'function') {
+      inject(); // Initialize Vercel Analytics
+    } else {
+      console.error('Vercel Analytics is not available.');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', initAnalytics);
+</script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YNDYBX0K88');
+</script>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="sidebar">
+            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+            <li> <h4 class="about"><a href="about.html">About</a></h4></li>
+            <li> <h4 class="help"><a href="help.html">Help</a></h4></li>
+            <li> <button class="algocode" ><h4>AlgoCode</h4></button></li>
+        </ul>
+        <div class="section1" onclick="window.location.href='index.html'" style="cursor: pointer;"><h4>ALGOVERSE</h4></div>
+        <div class="section2">
+           <li> <h4 class="about"><a href="about.html">About</a></h4></li>
+           <li> <h4 class="help"><a href="help.html">Help</a></h4></li>
+           <li> <button class="algocode"><h4>AlgoCode</h4></button></li>
+           <li class="menu-button" onclick=showSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" fill="#fff" /></svg></li>
+        </div>
+    </nav>
+   <section>
+        <img src="img/1.png" data-speed="-5" alt="" class="layer">
+        <img src="img/2.png" data-speed="5" alt="" class="layer">
+        <img src="img/3.png" data-speed="2" alt="" class="layer">
+        <img src="img/4.png" data-speed="6" alt="" class="layer">
+        <img src="img/5.png" data-speed="18" alt="" class="layer">
+        <img src="img/6.png" data-speed="-2" alt="" class="layer">
+        <img src="img/7.png" data-speed="4" alt="" class="layer">
+        <img src="img/8.png" data-speed="-9" alt="" class="layer">
+        <img src="img/9.png" data-speed="-6" alt="" class="layer">
+        <img src="img/10.png" data-speed="-7" alt="" class="layer">
+        <img src="img/11.png" data-speed="-5" alt="" class="layer">
+        <img src="img/12.png" data-speed="5" alt="" class="layer">
+        <h2 class="layer" >AlgoVerse</h2>
+    </section>
+    
+ <div id="about">
+    <br><br><br>
+    <div class="about-class"> <h1> Get Started</h1>
+        <hr>
+        <br>
+        <br><br>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="column1">
+               <img src="img/ds.jpg" >
+            </div>
+            <div class="column2">
+                <h3 class="title"> Data Structures</h3>
+                <br>
+                <p>a data structure is a specialized format for organizing, processing, retrieving, and storing data efficiently. Data structures are fundamental to designing efficient algorithms and managing large amounts of data</p>
+                 <p>Data structures are the fundamental building blocks of computer programming. They define how data is organized, stored, and manipulated within a program. Understanding data structures is very important for developing efficient and effective algorithms. In this tutorial, we will explore the most commonly used data structures, including arrays, linked lists, stacks, queues, trees, and graphs.</p>  
+                <br>
+                <div class="tabtitles">
+                    <button class="algo-code-buttons" onclick="window.location.href='ds.html'">Learn</button>       
+                </div> 
+            </div>
+        </div>
+    </div>
+    <!-- _________________________________________ -->
+    <br><br><br>
+    <div class="container">
+        <div class="row">
+            <div class="column3">
+                <h3 class="title" > Algorithms</h3>
+                <br>
+                <p>An algorithm is a set of commands that must be followed for a computer to perform calculations or other problem-solving operations.According to its formal definition, an algorithm is a finite set of instructions carried out in a specific order to perform a particular task.</p>  
+               <p>Algorithms allow us to give computers step-by-step instructions in order to solve a problem or perform a task. For example, let's consider the following algorithm: For each odd number from 1 to 9, multiply it by 2 and add 7 to it. Then, write out the results as a list separated by commas.</p> <br>
+                <div class="tabtitles">
+                    <button class="algo-code-buttons"  onclick="window.location.href='ag.html'">Learn</button>       
+                </div>             </div>
+            <div class="column4">
+                <img src="img/algorithm.jpg">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- services=---------- -->
+<div id="services">
+    <br><br><br><br><br>
+    <div class="container">
+        <h1 class="title"> why us?</h1>
+      <div class="serviceslist">
+       <div>
+         <h2>Visualization</h2>
+         <p>"I've created a website that brings abstract algorithms and data structures to life. By visualizing the processes of inserting and removing elements, I've made these complex concepts more intuitive and easier to understand. You can watch as algorithms like sorting and searching unfold before your eyes, and see how different data structures, like linked lists and trees, behave under various operations. "</p>    
+        </div>
+        <div>  
+            <h2>Understandability</h2>
+            <p>"My website uses animations to make algorithms and data structures more understandable. By watching these concepts in action, you can see how they work step-by-step. It's like having a visual guide that breaks down complex ideas into simpler components. This makes it easier to grasp the underlying principles and see how different algorithms and data structures compare in terms of efficiency and performance."</p>
+        </div>
+        <div>
+            <h2>Problem Solving</h2>
+            <p>"By seeing algorithms and data structures visualized in action, you can better understand how to approach different problem-solving challenges. You can experiment with different approaches, see their outcomes, and identify the most efficient solutions. This hands-on experience can help you develop problem-solving skills and apply them to real-world scenarios."</p>
+        </div>
+      </div>
+    </div>
+</div>
+    <!-- Footer -->
+<footer class="footer">
+  <div class="container text-center text-white py-3">
+      <p class="mb-0">&copy; 2024 Your Company. All Rights Reserved.</p>
+      <p>Contact us: <a href="mailto:varunbotcha77@gmail.com" class="text-white" style="text-decoration:none;color:white;cursor:pointer;">📫Mail</a></p>
+      <div>
+          <a href="#faq" class="text-white mx-2" style="text-decoration:none;cursor:pointer;">FAQ</a>
+          <a href="#privacy" class="text-white mx-2" style="text-decoration:none;cursor:pointer;">Privacy Policy</a>
+          <a href="#terms" class="text-white mx-2" style="text-decoration:none; cursor:pointer;">Terms of Service</a>
+      </div>
+  </div>
+</footer>
+
+
+
+    <script src="js/index.js"></script>
+</body>
+</html>

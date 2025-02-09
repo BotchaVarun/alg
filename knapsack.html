@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Knapsack Dynamic Programming</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="icon" href="img/log.png" sizes="32x32">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/main.css">
+        
+        <link rel="stylesheet" href="css/knap.css">
+    </head>
+    <body>
+    
+        <nav class="navbar">
+            <ul class="slidebar">
+                <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+                <li> <h4 class="about"><a href="about.html">About</a></h4></li>
+                <li> <h4 class="help"><a href="help.html">Help</a></h4></li>
+                <li> <div class="algocode" ><h4>AlgoCode</h4></div></li>
+            </ul>
+            <div class="section1" onclick="window.location.href='index.html'" style="cursor: pointer;"><h4>ALGOVERSE</h4></div>
+            <div class="section2">
+               <li> <h4 class="about"><a href="about.html">About</a></h4></li>
+               <li> <h4 class="help"><a href="help.html">Help</a></h4></li>
+               <li  style="border:none;" > <div class="algocode" style="border:none;"><h4>AlgoCode</h4></div></li>
+               <li class="menu-button" onclick=showSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" fill="#fff" /></svg></li>
+            </div>
+        </nav>
+        
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h3>Knapsack </h3>
+                <button class="close-btn" onclick="closeSidebar()" ><span class="material-symbols-outlined" id="close">
+                    close
+                    </span></button>
+            </div>
+            <ul>
+                <li class="has-submenu">
+                    <a href="javascript:void(0);" onclick="toggleSubmenu1()" class="menu-title">
+                        Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fa-solid fa-angle-down arrow-icon"></i>
+                    </a>
+                    <div class="submenu" id="submenu1">
+                        <div class="step-indicator">
+                            <div class="step" id="step1">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Theory" class="sidebar-link">Theory</a></div>
+                            </div>
+                            <div class="step" id="step2">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Advantages" class="sidebar-link">Advantages</a></div>
+                            </div>
+                            <div class="step" id="step3">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Disadvantages" class="sidebar-link">Disadvantages</a></div>
+                            </div>
+                            <div class="step" id="step4">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Applications" class="sidebar-link">Applications</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                
+                
+                <li class="has-submenu">
+                    <a href="javascript:void(0);" onclick="toggleSubmenu2()">Algorithm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fa-solid fa-angle-down arrow-icon2" ></i>
+                    </a>
+                    <ul class="submenu" id="submenu2">
+                        <div class="step-indicator2">
+                            <div class="step" id="step1">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#pseudocode">Pseudocode</a></div>
+                            </div>
+                            <div class="step" id="step2">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#flowchart">Flowchart</a></div>
+                            </div>
+                            
+                        </div>
+                    </ul>
+                </li>
+                
+                <li><a href="#Visualization">Visualization</a></li>
+                <li><a href="#tcomplexity" >Time complexity</a></li>
+                <li><a href="#scomplexity" >Space Complexity</a></li>
+            </ul>
+        </div>
+        
+    
+        <button class="menu-btn" onclick="openSidebar()"><span class="material-symbols-outlined" style="color:#fff;">
+            dock_to_left
+            </span></button>
+
+            <div class="content">
+                <div id="Theory" class="content-container">
+                    
+                     <div class="article-title">
+                       <h1>Knapsack Dynamic Programming algorithm</h1>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                    <div class="text" style="height: auto; overflow: hidden;">
+                        <p dir="ltr" style="text-align: justify;">
+        
+                           <b>Knapsack Dynamic Programming:</b> The Knapsack Problem is a classic optimization problem that can be solved using Dynamic Programming (DP). It involves determining the most valuable subset of items to include in a knapsack without exceeding its weight capacity.</p>
+                        <br><br>
+                        <p dir="ltr" style="text-align: justify;">
+                            <h2>HOW IT WORKS?</h2>
+                            <p>
+                                The Knapsack Problem using Dynamic Programming solves the problem of maximizing the total value of items that can be placed in a knapsack with a given weight capacity.
+                            </p>
+                            <ol>
+                               
+                              
+                                <li>Create a DP Table: Define 
+                                    dp[i][j] as the maximum value achievable with the first 
+                                    i items and a knapsack of capacity  j.</li>
+                                <li>
+                                    Base Case: If no items or zero capacity, the value is  0
+                                  
+                                  
+                                </li>
+                                <li>Recurrence Relation:
+                                </li>
+                                &nbsp; &nbsp; &nbsp; &nbsp;Exclude the item: dp[i][j]=dp[i−1][j]<br>
+                                &nbsp; &nbsp; &nbsp; &nbsp;Include the item (if it fits):  dp[i][j]=dp[i−1][j−w<sub>i</sub>]+v<sub>i</sub><br>
+                              
+                                &nbsp; &nbsp; &nbsp; &nbsp;Take the maximum of the two.
+                                <li>Result: The value at .dp[n][W] gives the maximum achievable value.</li>
+                            </ol>
+                            
+                            
+                        </div>
+                    </div>
+        
+        <!-- advantages -->
+        
+                <div id="Advantages" class="content-container">
+                    <div class="article-title text">
+                        <h1>Advantages</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <br><br>
+                    <div class="article-title text">
+                        
+                            <ol>
+                               
+                                    <ul>
+                                        <li><strong>Optimal Solution:</strong> Ensures the best possible solution by exploring all combinations of items within the given constraints.</li>
+                                   <br><br>
+                               
+                                
+                                        <li><strong>Systematic and Efficient:</strong>Breaks the problem into smaller subproblems, avoiding redundant calculations through memoization or tabulation.  </li><br><br>
+                                
+                                        <li><strong>Handles Complex Cases:</strong>Works well for the 0/1 Knapsack problem, where items cannot be divided, unlike greedy algorithms which might fail.</li>
+                                    <br><br>
+                               
+                                   
+                                        <li><strong>Generalizable:</strong> The method can be adapted to other variations of the knapsack problem, such as bounded or unbounded knapsack.
+
+        
+                                        </li>
+                                   <br><br>
+                                
+                                   <li><strong>Scales Well for Reasonable Sizes:</strong> Handles inputs efficiently for moderate sizes of 
+                                     n (number of items) and  W (capacity).
+                                    
+                                   </li>
+                                   <br><br>
+                                  
+                                </ul>
+                            </ol>
+                        
+                        
+                     </div>
+        
+                </div>
+        
+        
+        <!-- disadvantages -->
+        
+        
+                <div id="Disadvantages" class="content-container">
+                    <div class="article-title text">
+                        <h1>Disadvantages</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <br><br>
+                    <div class="article-title text">
+                        <ol>
+                            <ul>
+                                <li><strong>High Space Complexity:</strong>A 2D DP table requiresO(n⋅W) space, which can be excessive for large 𝑊  </li>
+                           <br><br>
+                       
+                        
+                                <li><strong>High Time Complexity:</strong>Although better than brute force (2<sup>n</sup>),  O(n⋅W) complexity may still be impractical for very large capacities or a large number of items.
+        
+                                </li><br><br>
+                        
+                                <li><strong>Not Suitable for Real-Time Use: </strong>Due to the above complexities, it may be slow for applications needing real-time decisions.
+                                </li>
+                            <br><br>
+                       
+                           
+                                <li><strong>Integer Constraints:</strong>Assumes integer weights and capacities, making it unsuitable for problems with continuous weights or values without modifications.
+        
+                                </li>
+                           <br><br>
+                        
+                           <li><strong>Lacks Flexibility in Certain Variants:</strong>Requires modifications for fractional items (e.g., Fractional Knapsack Problem) where greedy algorithms perform better.
+                           </li>
+                           <br><br>
+                           
+                        </li>
+                        </ul>
+                        </ol>
+                    
+                     </div>
+        
+                </div>
+        
+        
+        <!-- applications -->
+        
+        
+                <div id="Applications" class="content-container">
+                    <div class="article-title text">
+                        <h1>Applications</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <br>
+                    <div class="article-title text">
+                        <ol>
+                            <ul>
+                                <li><strong> Robotics and Artificial Intelligence:</strong> Optimizing routes for robots or drones, considering weight or energy capacity.
+                                    <br>> Allocating resources or actions in AI systems to maximize performance under constraints.
+                                    </li>
+                           <br><br>
+                       
+                        
+                                <li><strong> Logistics and Transportation:</strong> Optimizing the selection of items to load into trucks, ships, or planes to maximize value within weight or space constraints.<br> Choosing the best mix of products to transport or store within capacity limits.
+        
+        
+                                </li><br><br>
+                        
+                                <li><strong>Finance:</strong> Selecting a subset of stocks, bonds, or other investments to maximize returns while limiting risk or adhering to budget constraints.<br>Allocating resources to various expenditures while maximizing overall benefit.</li>
+                            <br><br>
+                       
+                           
+                                <li><strong> Project and Time Management</strong>Allocating time to tasks to maximize productivity within a given time frame.
+                                    <br> Assigning tasks to employees to optimize efficiency while considering skill and time constraints.
+        
+                                </li>
+                           <br><br>
+                        
+                           <li><strong> Healthcare: </strong> Allocating limited medical resources (e.g., hospital beds, medications) to maximize patient outcomes.<br>Choosing the optimal mix of foods to meet nutritional requirements within a calorie or budget limit.
+        
+                           </li>
+                           <br><br>
+                           <li><strong> Cryptography:</strong> Although not widely used today, knapsack-like problems were once the basis for public-key cryptography algorithms.
+        
+                           </li>
+                           <br><br>
+                
+                        </ul>
+                        </ol>
+                    
+                     </div>
+                </div>
+        
+        
+        
+                <!-- pseudocode -->
+        
+                <div id="pseudocode" class="content-container">
+                    <div class="article-title text">
+                        <h1>Pseudocode</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <br><br>
+        <div class="pseudo">
+            <div class="article-title text" style="border-radius: 7px; justify-content: center; align-items: center; margin-left: 4px; width: 90%;">
+                <h4 style="margin-left: 10px; font-size:15px;font-weight:600">
+                    Input: n (number of items), W (capacity), weights[], values[]<br><br>
+                    Output: Maximum value achievable within capacity W
+                    <br> <br>
+                    1.Create dp table of size (n+1) x (W+1), initialize as 0<br><br>
+                      2. for i = 1 to n:<br><br>
+
+                    &nbsp; &nbsp; for j = 1 to W:<br> <br>
+                   &nbsp; &nbsp; &nbsp; if weights[i-1] ≤ j:<br> <br>
+                   &nbsp; &nbsp;&nbsp; &nbsp; dp[i][j] = max(dp[i-1][j], dp[i-1][j-weights[i-1]] + values[i-1])<br> <br>
+                    &nbsp; &nbsp; &nbsp; else:<br> <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp;dp[i][j] = dp[i-1][j]
+                    <br> <br>
+                  
+                    3. Return dp[n][W] <br> <br>
+                
+            
+                </h4><br>
+             </div>
+             <div class="article-title text">
+                <br>
+                <h1>Explanation</h1><br>
+              <p>dp[i][j]: Maximum value using the first  𝑖 items with capacity j.</p><br>
+              <p>If item fits, choose the maximum of including or excluding it.</p><br>
+              <p>If it doesn’t fit, carry forward the value.</p><br>
+             <p>The result is stored at dp[n][W].</p><br>
+            
+            </div>
+             <br>
+        </div>
+                </div>
+        
+        <!-- flowchart -->
+        
+
+        
+         
+        
+              
+                <!-- visualization -->
+        
+        
+                <div id="Visualization" class="content-container">
+                    <div class="article-title text">
+                        <h1>Visualization</h1>
+                    </div>
+                    <hr>
+                    <div class="cancel" onclick="normalscreen()">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <div class="matrix-container">
+                        <div class="weights">
+                            <p>Weights:</p>
+                        </div>
+                        <div class="values">
+                            <p>Values:</p>
+                        </div>
+                    </div>
+                    <div id="knapsack-table"></div>
+
+                    <div id="controls">
+                        <button id="start-btn" onclick="startKnapsack()">Start Visualization</button>
+                        <button id="pause-btn">Pause</button>
+                        <button id="resume-btn">Resume</button>
+                        <button id="reset-btn">Reset</button>
+                    </div>
+                    <div class="screen" onclick="fullscreen()">
+                        <i class="fa-solid fa-expand"></i>
+                    </div>
+                    <div class="menu1">
+                        <div class="arrow1" onclick="showarrow1()">
+                            <i class="fa-solid fa-caret-left" style="color:aqua; font-size:30px;"></i>
+                        </div>
+                        <h1 class="data">Knap Sack Using Dynamic Programming</h1>
+                    </div> 
+                    <div class="menu2">
+                        <div class="arrow2" onclick="showarrow2()">
+                            <i class="fa-solid fa-caret-left" style="color:aqua; font-size:30px;"></i>
+                        </div>
+                        <div class="menu2-info">
+                            <div class="code">
+                                <h4 class="e1">Create dp table of size (n+1) x (W+1)</h4><br>
+                                <h4 class="e2">&nbsp;&nbsp;&nbsp;&nbsp;for i = 1 to n:</h4><br>
+                                <h4 class="e3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for j = 1 to W:</h4><br>
+                                <h4 class="e4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if weights[i-1] ≤ j:</h4><br>
+                                <h4 class="e5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dp[i][j] = max(dp[i-1][j], dp[i-1][j-weights[i-1]] + values[i-1])</h4><br>
+                                <h4 class="e6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else: dp[i][j] = dp[i-1][j]</h4><br>
+                                <h4 class="e7">&nbsp;&nbsp;&nbsp;&nbsp;Return dp[n][W]</h4><br>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+
+                
+                
+                <div id="tcomplexity" class="content-container">
+                    <div class="article-title text">
+                        <h1>Complexity</h1>
+                        <hr><br>
+                    </div>
+                    <div id="complexity-analysis">
+                        <!-- This will display time and space complexity -->
+                    </div>
+                </div>
+                <div id="Explaination" class="content-container">
+                    <div class="article-title text">
+                        <h1>Visualization Explanation</h1>
+                        <hr><br>
+                        <div id="Explain">
+                        </div>
+                    </div>
+                </div>
+        <!-- time complexity -->
+                <div id="complexity" class="content-container">
+                    <div class="article-title text">
+                    <h1>Time complexity</h1>
+                 </div>
+                 <br>
+                 <hr><br><br>
+                 <p><strong>Definition:</strong> Time complexity measures the amount of time an algorithm takes to complete as a function of the size of the input. For knapsack, the time complexity can be expressed in different scenarios:</p>
+                 <br>
+                     <p>The time complexity for all the cases is <strong>O(n.W)</strong></p>
+                       
+                     The algorithm involves two nested loops<br><br>
+
+                     &nbsp; &nbsp; &nbsp; Outer loop iterates over items (n).<br> <br>
+                     &nbsp; &nbsp; &nbsp;Inner loop iterates over capacities (W) <br> <br>
+                     <strong>Total time complexity is O(n.W)</strong>
+             </div>
+        
+        
+        
+        <!-- space compleity -->
+        
+                <div id="scomplexity" class="content-container">
+                    <div class="article-title text">
+                    <h1>Space complexity</h1>
+                 </div>
+                 <br>
+                 <hr><br>
+              
+                 <p><strong>Definition:</strong> Space complexity measures the amount of memory an algorithm uses relative to the size of the input. For knapsack, the space complexity is straightforward:</p>
+                 <br>
+                       <p><strong>2D DP Table:</strong></p><br>
+                       &nbsp; &nbsp; &nbsp; Requires a table of size (n+1)×(W+1) to store subproblem solutions.
+                       <br> <br>
+                       &nbsp; &nbsp; &nbsp;Space Complexity:  O(n⋅W) <br> <br>
+                       <p><strong>Optimized Space (1D Array):
+
+                       </strong></p><br>
+                       &nbsp; &nbsp; &nbsp;By using a 1D array ( ]
+                        dp[j]) and iterating from W to O for each item, we can overwrite previous results.
+                       <br> <br>
+                       &nbsp; &nbsp; &nbsp;Space Complexity(for optimised):  O(W) <br> <br>
+             
+                </div>
+            </div>
+
+
+
+<!-- script -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="js/knapsack.js"></script>
+<script>
+    window.addEventListener('load', snap);
+
+</script>
+<script >
+    function openSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const menuBtn = document.querySelector('.menu-btn');
+    
+        sidebar.style.width = '280px'; // Set the sidebar width to its full size
+        sidebar.style.transform = 'translateX(0)'; // Slide the sidebar into view
+        menuBtn.style.display = 'none'; // Hide the menu button
+    }
+    function closeSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const menuBtn = document.querySelector('.menu-btn');
+    
+        sidebar.style.transform = 'translateX(-100%)'; // Slide the sidebar out of view
+        menuBtn.style.display = 'flex'; // Show the menu button
+    }
+    
+
+function toggleSubmenu1() {
+const submenu = document.getElementById("submenu1");
+submenu.classList.toggle("expanded");
+const arrowIcon = document.querySelector(".arrow-icon");
+arrowIcon.style.transform = submenu.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+}
+function toggleSubmenu2() {
+const submenu = document.getElementById("submenu2");
+submenu.classList.toggle("expanded");
+const arrowIcon = document.querySelector(".arrow-icon2");
+arrowIcon.style.transform = submenu.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+}
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+const sidebar = document.querySelector('.sidebar');
+
+sidebar.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('#')) {
+        e.preventDefault();
+        
+        const targetId = e.target.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            // Quickly scroll to the target element
+            window.scrollTo({
+                top: targetElement.offsetTop - 100, // Adjust for fixed header
+                behavior: 'auto' // No smooth scrolling, immediate jump
+            });
+
+            // Update active link immediately
+            document.querySelectorAll('.sidebar a').forEach(link => link.classList.remove('active'));
+            e.target.classList.add('active');
+        }
+    }
+});
+});
+
+
+window.onload = function() {
+document.getElementById("Visualization").scrollIntoView();
+};
+
+</script>
+
+ <!-- Bootstrap JS and dependencies -->
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ <script src="js/index2.js"></script>
+ <script>
+    function handleStepActivation(selector, stepClass) {
+        document.querySelectorAll(selector + ' .step a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default anchor behavior
+                
+                // Find the index of the clicked step
+                const clickedStepIndex = Array.from(this.closest('.step').parentNode.children).indexOf(this.closest('.step'));
+                // Reset all steps to default state
+                document.querySelectorAll(selector + ' .step').forEach((step, index) => {
+                    if (index < clickedStepIndex) {
+                        step.classList.add('active');
+                        step.querySelector('.line').style.backgroundColor = '#007bff';
+                    } else if (index === clickedStepIndex) {
+                        step.classList.add('active');
+                        step.querySelector('.line').style.backgroundColor = '#d3d3d3'; // Keep the line color of the clicked step default
+                    } else {
+                        step.classList.remove('active');
+                        step.querySelector('.line').style.backgroundColor = '#d3d3d3';
+                    }
+                });
+            });
+        });
+    }
+
+    // Handle steps for Description submenu
+    handleStepActivation('.has-submenu .step-indicator', 'step');
+
+    // Handle steps for Algorithm submenu
+    handleStepActivation('.has-submenu .step-indicator2', 'step');
+ </script>
+</body>
+</html>

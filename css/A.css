@@ -1,0 +1,1801 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+#start-btn,#path-btn,#reset-btn{
+padding: 10px 20px;
+background-color: #3498db;
+color: white;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+font-size: 16px;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+transition: background-color 0.3s, transform 0.2s;
+}
+button:hover:not(:disabled) {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+  
+/**/
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;  
+}
+
+.graph {
+    position: relative;
+    width: 70%;
+    height: 100%;
+    
+    border: 0;
+    background-color: #e0dede;
+    overflow: hidden;
+}
+
+.node {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid black;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+}
+
+.edge {
+    position: absolute;
+    width: 2px;
+    background-color: black;
+    transform-origin: 0 0;
+}
+
+
+.weight{
+    position: relative;
+    background-color: white;
+    padding: 2px 5px;
+    border-radius: 5px;
+    width:100px;
+    height: 0;
+    border: 1px solid black;
+    font-size: 12px;
+}
+#SA{
+   transform: rotate(145deg);
+  
+   width: 136px;
+   height: 0px;
+   position: relative;
+   margin-left:-47px;
+   margin-top:15px;
+}
+#SA i{
+    margin-left:122px;
+    
+    position: absolute;
+    margin-top:-34px;
+    transform: rotate(125deg);
+}
+#SA div{
+    margin-top:10px;
+    margin-right: 50px;
+    transform: rotate(180deg);
+}
+#SB{
+
+    transform: rotate(100deg);
+    width: 110px;
+    height: 0px;
+    position: relative;
+    margin-left: -35px;
+    margin-top: -1px;
+}
+#SB i{
+    margin-left: 94px;
+    position: absolute;
+    margin-top: -34px;
+    transform: rotate(125deg);
+}
+#SB div{
+    margin-top:10px;
+    margin-right: 50px;
+    transform: rotate(180deg);
+}
+#SC{
+
+    transform: rotate(46deg);
+    width: 95px;
+    height: 0px;
+    position: relative;
+    margin-left: -25px;
+    margin-top: -11px;
+}
+#SC i{
+    margin-left: 82px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(125deg);
+}
+#SC div{
+    margin-left: 39px;
+    position: absolute;
+    margin-top: -24px;
+    transform: rotate(3deg);
+}
+#AD{
+
+    transform: rotate(66deg);
+    width: 94px;
+    height: 0px;
+    position: relative;
+    margin-left: -25px;
+    margin-top: 0px;
+}
+#AD i{
+    margin-left: 77px;
+    position: absolute;
+    margin-top: -34px;
+    transform: rotate(120deg);
+}
+#AD div{
+    margin-top:10px;
+    margin-right: 50px;
+    transform: rotate(180deg);
+}
+#AB{
+
+    transform: rotate(23deg);
+    width: 93px;
+    height: 0px;
+    position: relative;
+    margin-left: -24px;
+    margin-top: -8px;
+}
+#AB i{
+    margin-left: 77px;
+    position: absolute;
+    margin-top: -2px;
+    transform: rotate(125deg);
+}   
+#AB div{
+    margin-top: -22px;
+    margin-left: 37px;
+    transform: rotate(0deg);
+}
+#BD{
+
+    transform: rotate(133deg);
+    width: 65px;
+    height: 0px;
+    position: relative;
+    margin-left: -12px;
+    margin-top: -6px;
+}
+#BD i{
+    margin-left: 50px;
+    position: absolute;
+    margin-top: -6px;
+    transform: rotate(125deg);
+}
+#BD div{
+    margin-left: 19px;
+    position: absolute;
+    margin-top: 7px;
+    transform: rotate(180deg);
+}
+#CD{
+
+    transform: rotate(146deg);
+    width: 193px;
+    height: 0px;
+    position: relative;
+    margin-left: -71px;
+    margin-top: 6px;
+}
+#CD i{
+    margin-left: 180px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(125deg);
+}
+#CD div{
+    margin-left: 66px;
+    position: absolute;
+    margin-top: 9px;
+    transform: rotate(178deg);
+}
+#CE{
+
+    transform: rotate(67deg);
+    width: 65px;
+    height: 0px;
+    position: relative;
+    margin-left: -12px;
+    margin-top: -10px;
+}
+#CE i{
+    margin-left: 50px;
+    position: absolute;
+    margin-top: -6px;
+    transform: rotate(125deg);
+}
+#CE div{
+    margin-left: 23px;
+    position: absolute;
+    margin-top: -29px;
+    transform: rotate(3deg);
+}
+#CF{
+
+    transform: rotate(111deg);
+    width: 139px;
+    height: 0px;
+    position: relative;
+    margin-left: -46px;
+    margin-top: -7px;
+}
+#CF i{
+    margin-left: 128px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(125deg);
+}
+#CF div{
+    margin-left: 66px;
+    position: absolute;
+    margin-top: 9px;
+    transform: rotate(178deg);
+}
+#DF{
+
+    transform: rotate(24deg);
+    width: 88px;
+    height: 0px;
+    position: relative;
+    margin-left: -24px;
+    margin-top: -2px;
+}
+#DF i{
+    margin-left: 75px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(125deg);
+}
+#DF div{
+    margin-left: 41px;
+    position: absolute;
+    margin-top: -26px;
+    transform: rotate(10deg);
+}
+#DH{
+    margin-left: -15px;
+    position: absolute;
+    margin-top: 23px;
+    width: 80px;
+    transform: rotate(140deg);
+}
+#DH i{
+    margin-left: 66px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(125deg);
+}
+#DH div{
+    margin-left: 29px;
+    position: absolute;
+    margin-top: 9px;
+    transform: rotate(178deg);
+}
+#DI{
+    margin-left: -16px;
+    position: absolute;
+    margin-top: 20px;
+    width: 62px;
+    transform: rotate(91deg);
+}
+#DI i{
+    margin-left: 46px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(119deg);
+}
+#DI div{
+    margin-left: 20px;
+    position: absolute;
+    margin-top: 9px;
+    transform: rotate(178deg);
+}
+#EG{
+    margin-left: -14px;
+    position: absolute;
+    margin-top: 18px;
+    width: 67px;
+    transform: rotate(68deg);
+}
+#EG i{
+    margin-left: 52px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(115deg);
+}
+#EG div{
+    margin-left: 11px;
+    position: absolute;
+    margin-top: -31px;
+    transform: rotate(3deg);
+
+}
+#FG{
+    margin-left: -34px;
+    position: absolute;
+    margin-top: 22px;
+    width: 110px;
+    transform: rotate(12deg);
+}
+#FG i{
+    margin-left: 95px;
+    position: absolute;
+    margin-top: -6px;
+    transform: rotate(115deg);
+}
+#FG div{
+    margin-left: 47px;
+    position: absolute;
+    margin-top: -31px;
+    transform: rotate(3deg);
+
+}
+#HI{
+    margin-left: -10px;
+    position: absolute;
+    margin-top: 22px;
+    width: 60px;
+    transform: rotate(22deg);
+}
+#HI i{
+    margin-left: 47px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(120deg);
+}
+#HI div{
+    margin-left: 24px;
+    position: absolute;
+    margin-top: -22px;
+    transform: rotate(3deg);
+
+}
+#HJ{
+    margin-left: -54px;
+    position: absolute;
+    margin-top: 21px;
+    width: 136px;
+    transform: rotate(53deg);
+}
+#HJ i{
+    margin-left: 123px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(120deg);
+}
+#HJ div{
+    margin-left: 72px;
+    position: absolute;
+    margin-top: 15px;
+    transform: rotate(175deg);
+
+}
+#IJ{
+    margin-left: -19px;
+    position: absolute;
+    margin-top: 17px;
+    width: 74px;
+    transform: rotate(87deg);
+}
+#IJ i{
+    margin-left: 62px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(120deg);
+}
+#IJ div{
+    margin-left: 28px;
+    position: absolute;
+    margin-top: -20px;
+    transform: rotate(0deg)
+
+}
+#IK{
+    margin-left: -35px;
+    position: absolute;
+    margin-top: 19px;
+    width: 107px;
+    transform: rotate(51deg);
+}
+#IK i{
+    margin-left: 95px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(120deg);
+}
+#IK div{
+    margin-left: 47px;
+    position: absolute;
+    margin-top: -25px;
+    transform: rotate(0deg);
+}
+#JK{
+    margin-left: -8px;
+    position: absolute;
+    margin-top: 19px;
+    width: 56px;
+    transform: rotate(0deg);
+}
+#JK i{
+    margin-left: 42px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(120deg);
+}
+#JK div{
+    margin-left: 15px;
+    position: absolute;
+    margin-top: -25px;
+    transform: rotate(0deg);
+}
+#IG{
+    margin-left: -97px;
+    position: absolute;
+    margin-top: 31px;
+    width: 235px;
+    transform: rotate(-6deg);
+}
+#IG i{
+    margin-left: 224px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(120deg);
+}
+#IG div{
+    margin-left: 86px;
+    position: absolute;
+    margin-top: -22px;
+    transform: rotate(0deg);
+}
+#KG{
+    margin-left: -69px;
+    position: absolute;
+    margin-top: 24px;
+    width: 186px;
+    transform: rotate(-37deg)
+}
+#KG i{
+    margin-left: 174px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(120deg);
+}
+#KG div{
+    margin-left: 64px;
+    position: absolute;
+    margin-top: -25px;
+    transform: rotate(0deg);
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------- */
+.info {
+    width: 40%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    overflow-y: auto;
+}
+
+#closed-list {
+    list-style: none;
+    padding: 0;
+}
+
+#closed-list li {
+    margin-bottom: 10px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+
+  }
+
+@media (max-width: 768px) {
+   /**/
+   nav {
+    padding: 0;
+   }
+
+.section1 h4 {
+    font-size: 20px;
+}
+
+.section2 a {
+    font-size: 16px;
+}
+.menu-button {
+    display: block;
+}
+
+.section2 li .about
+{
+    display: none;
+}
+.section2 li .algocode
+{
+    display: none;
+}
+.section2 li .help
+{
+    display:none;
+}
+   /**/
+   .team-content
+   {
+       width: 100%;
+       grid-template-columns: repeat(auto-fill, minmax(150px, auto));
+       margin-top: 4rem;
+   }
+   /**/
+   .container
+   {
+    padding: 10px;
+    width: 100%;
+    margin: 0;
+    display: inline-block;
+    
+    font-size: 15px;
+   }
+   #searchings
+  {
+    margin-top: -250px;
+  }
+  .graph {
+    top:30px;
+    width:100%;
+  }
+  .info {
+    width: 55%;
+    margin-top: 50px;
+}
+#SA{
+    transform: rotate(145deg);
+   
+    width: 125px;
+    height: 0px;
+    position: relative;
+    margin-left:-97px;
+    margin-top:15px;
+ }
+ #SA i{
+     margin-left:122px;
+     
+     position: absolute;
+     margin-top:-29px;
+     transform: rotate(125deg);
+ }
+ #SA div{
+     margin-top:10px;
+     margin-right: 50px;
+     transform: rotate(180deg);
+ }
+ #SB{
+ 
+     transform: rotate(100deg);
+     width: 100px;
+     height: 0px;
+     position: relative;
+     margin-left: -85px;
+     margin-top: -5px;
+ }
+ #SB i{
+     margin-left: 94px;
+     position: absolute;
+     margin-top: -29px;
+     transform: rotate(125deg);
+ }
+ #SB div{
+     margin-top:10px;
+     margin-right: 50px;
+     transform: rotate(180deg);
+ }
+ #SC{
+ 
+     transform: rotate(46deg);
+     width: 90px;
+     height: 0px;
+     position: relative;
+     margin-left: -75px;
+     margin-top: -11px;
+ }
+ #SC i{
+     margin-left: 87px;
+     position: absolute;
+     margin-top: -6px;
+     transform: rotate(125deg);
+ }
+ #SC div{
+     margin-left: 39px;
+     position: absolute;
+     margin-top: -24px;
+     transform: rotate(3deg);
+ }
+ #AD{
+ 
+     transform: rotate(69deg);
+     width: 83px;
+     height: 0px;
+     position: relative;
+     margin-left: -80px;
+     margin-top: 0px;
+ }
+ #AD i{
+     margin-left: 79px;
+     position: absolute;
+     margin-top: -30px;
+     transform: rotate(120deg);
+ }
+ #AD div{
+     margin-top:10px;
+     margin-right: 50px;
+     transform: rotate(180deg);
+ }
+ #AB{
+ 
+     transform: rotate(23deg);
+     width: 83px;
+     height: 0px;
+     position: relative;
+     margin-left: -74px;
+     margin-top: -5px;
+ }
+ #AB i{
+     margin-left: 77px;
+     position: absolute;
+     margin-top: 2px;
+     transform: rotate(125deg);
+ }   
+ #AB div{
+     margin-top: -22px;
+     margin-left: 37px;
+     transform: rotate(0deg);
+ }
+ #BD{
+ 
+     transform: rotate(133deg);
+     width: 52px;
+     height: 0px;
+     position: relative;
+     margin-left: -62px;
+     margin-top: -5px;
+ }
+ #BD i{
+     margin-left: 47px;
+     position: absolute;
+     margin-top: -6px;
+     transform: rotate(125deg);
+ }
+ #BD div{
+     margin-left: 19px;
+     position: absolute;
+     margin-top: 7px;
+     transform: rotate(180deg);
+ }
+ #CD{
+ 
+     transform: rotate(147deg);
+     width: 185px;
+     height: 0px;
+     position: relative;
+     margin-left: -123px;
+     margin-top: -3px;
+ }
+ #CD i{
+     margin-left: 180px;
+     position: absolute;
+     margin-top: -5px;
+     transform: rotate(125deg);
+ }
+ #CD div{
+     margin-left: 66px;
+     position: absolute;
+     margin-top: 9px;
+     transform: rotate(178deg);
+ }
+ #CE{
+ 
+     transform: rotate(67deg);
+     width: 54px;
+     height: 0px;
+     position: relative;
+     margin-left: -62px;
+     margin-top: -10px;
+ }
+ #CE i{
+     margin-left: 47px;
+     position: absolute;
+     margin-top: -6px;
+     transform: rotate(125deg);
+ }
+ #CE div{
+     margin-left: 23px;
+     position: absolute;
+     margin-top: -29px;
+     transform: rotate(3deg);
+ }
+ #CF{
+ 
+     transform: rotate(114deg);
+     width: 130px;
+     height: 0px;
+     position: relative;
+     margin-left: -96px;
+     margin-top: -7px;
+ }
+ #CF i{
+     margin-left: 128px;
+     position: absolute;
+     margin-top: -5px;
+     transform: rotate(125deg);
+ }
+ #CF div{
+     margin-left: 66px;
+     position: absolute;
+     margin-top: 9px;
+     transform: rotate(178deg);
+ }
+ #DF{
+ 
+     transform: rotate(24deg);
+     width: 80px;
+     height: 0px;
+     position: relative;
+     margin-left: -74px;
+     margin-top: -2px;
+ }
+ #DF i{
+     margin-left: 75px;
+     position: absolute;
+     margin-top: -5px;
+     transform: rotate(125deg);
+ }
+ #DF div{
+     margin-left: 41px;
+     position: absolute;
+     margin-top: -26px;
+     transform: rotate(10deg);
+ }
+ #DH{
+     margin-left: -70px;
+     position: absolute;
+     margin-top: 10px;
+     width: 69px;
+     transform: rotate(145deg);
+ }
+ #DH i{
+     margin-left: 66px;
+     position: absolute;
+     margin-top: -5px;
+     transform: rotate(125deg);
+ }
+ #DH div{
+     margin-left: 29px;
+     position: absolute;
+     margin-top: 9px;
+     transform: rotate(178deg);
+ }
+ #DI{
+     margin-left: -55px;
+     position: absolute;
+     margin-top: 15px;
+     width: 52px;
+     transform: rotate(91deg);
+ }
+ #DI i{
+     margin-left: 46px;
+     position: absolute;
+     margin-top: -5px;
+     transform: rotate(115deg);
+ }
+ #DI div{
+     margin-left: 20px;
+     position: absolute;
+     margin-top: 9px;
+     transform: rotate(178deg);
+ }
+ #EG{
+     margin-left: -60px;
+     position: absolute;
+     margin-top: 10px;
+     width: 54px;
+     transform: rotate(68deg);
+ }
+ #EG i{
+     margin-left: 48px;
+     position: absolute;
+     margin-top: -5px;
+     transform: rotate(115deg);
+ }
+ #EG div{
+     margin-left: 11px;
+     position: absolute;
+     margin-top: -31px;
+     transform: rotate(3deg);
+ 
+ }
+ #FG{
+     margin-left: -81px;
+     position: absolute;
+     margin-top: 22px;
+     width: 96px;
+     transform: rotate(5deg);
+ }
+ #FG i{
+     margin-left: 90px;
+     position: absolute;
+     margin-top: -5px;
+     transform: rotate(115deg);
+ }
+ #FG div{
+     margin-left: 47px;
+     position: absolute;
+     margin-top: -31px;
+     transform: rotate(3deg);
+ 
+ }
+ #HI{
+     margin-left: -60px;
+     position: absolute;
+     margin-top: 12px;
+     width: 50px;
+     transform: rotate(10deg);
+ }
+ #HI i{
+     margin-left: 47px;
+     position: absolute;
+     margin-top: -5px;
+     transform: rotate(120deg);
+ }
+ #HI div{
+     margin-left: 24px;
+     position: absolute;
+     margin-top: -22px;
+     transform: rotate(3deg);
+ 
+ }
+ #HJ{
+     margin-left: -104px;
+     position: absolute;
+     margin-top: 15px;
+     width: 127px;
+     transform: rotate(53deg);
+ }
+ #HJ i{
+     margin-left: 123px;
+     position: absolute;
+     margin-top: -5px;
+     transform: rotate(120deg);
+ }
+ #HJ div{
+     margin-left: 72px;
+     position: absolute;
+     margin-top: 15px;
+     transform: rotate(175deg);
+ 
+ }
+ #IJ{
+     margin-left: -69px;
+     position: absolute;
+     margin-top: 10px;
+     width: 65px;
+     transform: rotate(87deg);
+ }
+ #IJ i{
+     margin-left: 62px;
+     position: absolute;
+     margin-top: -5px;
+     transform: rotate(120deg);
+ }
+ #IJ div{
+     margin-left: 28px;
+     position: absolute;
+     margin-top: -20px;
+     transform: rotate(0deg)
+ 
+ }
+ #IK{
+     margin-left: -85px;
+     position: absolute;
+     margin-top: 19px;
+     width: 100px;
+     transform: rotate(51deg);
+ }
+ #IK i{
+     margin-left: 95px;
+     position: absolute;
+     margin-top: -5px;
+     transform: rotate(120deg);
+ }
+ #IK div{
+     margin-left: 47px;
+     position: absolute;
+     margin-top: -25px;
+     transform: rotate(0deg);
+ }
+ #JK{
+     margin-left: -56px;
+     position: absolute;
+     margin-top: 19px;
+     width: 45px;
+     transform: rotate(0deg);
+ }
+ #JK i{
+     margin-left: 39px;
+     position: absolute;
+     margin-top: -5px;
+     transform: rotate(120deg);
+ }
+ #JK div{
+     margin-left: 15px;
+     position: absolute;
+     margin-top: -25px;
+     transform: rotate(0deg);
+ }
+ #IG{
+     margin-left: -147px;
+     position: absolute;
+     margin-top: 31px;
+     width: 229px;
+     transform: rotate(-6deg);
+ }
+ #IG i{
+     margin-left: 224px;
+     position: absolute;
+     margin-top: -5px;
+     transform: rotate(120deg);
+ }
+ #IG div{
+     margin-left: 86px;
+     position: absolute;
+     margin-top: -22px;
+     transform: rotate(0deg);
+ }
+ #KG{
+     margin-left: -119px;
+     position: absolute;
+     margin-top: 20px;
+     width: 180px;
+     transform: rotate(-37deg)
+ }
+ #KG i{
+     margin-left: 174px;
+     position: absolute;
+     margin-top: -5px;
+     transform: rotate(120deg);
+ }
+ #KG div{
+     margin-left: 64px;
+     position: absolute;
+     margin-top: -25px;
+     transform: rotate(0deg);
+ }
+ .node {
+    width: 30px;
+    height: 30px;
+
+    line-height: 30px;
+
+    margin-left: -45px;
+}
+ 
+}
+  @media (max-width: 480px) {
+
+
+  }
+  
+
+
+
+
+/* page css */
+.sidebar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 15px 0px;
+    margin-top: 0;
+    gap: 35px;
+  }
+  .sidebar-header h3 {
+    margin: 0;
+    margin-left: -180px;
+    font-size:18px;
+   
+  }
+  .close-btn {
+  background: none;
+  border: 0;
+  font-size: 20px;
+  color: #000;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  margin-top: -55px;
+  margin-right: -230px;
+  }
+  #Theory
+  {
+    margin-top: -50px;
+    height: auto;
+  }
+.sidebar {
+    width: 250px;/* Start with sidebar visible */
+    height: calc(100% - 50px); 
+  
+    color: white;
+    position: fixed;
+    top: 55px; 
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: transform 0.3s ease, width 0.3s ease; /* Smooth transition */
+    padding-top: 20px;
+    z-index: 3;
+  
+    transform: translateX(0); /* Sidebar starts visible */
+  }
+  
+
+  /* arrow css */
+  .menu2 {
+    position: relative;
+    width: 400px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    background-color: #090909;
+    height: 275px;
+    margin-top: 15px;
+    color:#fff;
+    right:0;
+    padding: 0;
+    margin-left: auto;
+    border: 1px solid #fff;
+    transform: translateX(0);
+    transition: transform 1.5s ease,width 1.5s ease;
+  
+  }
+  .menu2-info
+  {
+    padding: 0;
+  }
+
+  .menu2.going{
+    top:-25%;
+  }
+  .menu2 .e1,
+  .menu2 .e2,
+  .menu2 .e3,
+  .menu2 .e4,
+  .menu2 .e5,
+  .menu2 .e6,
+  .menu2 .e7,
+  .menu2 .e8,
+  .menu2 .e9{
+   
+    
+    transition: background-color 0.5s ease;
+    font-size: 15px;
+  }
+  .menu2 .e1,
+  .menu2 .e2,
+  .menu2 .e3,
+  .menu2 .e4,
+  .menu2 .e5,
+  .menu2 .e6,
+  .menu2 .e7
+  { 
+    margin-top:-9px;
+  }
+  .menu2.e1.flow{
+    display: block; 
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-size:10px;
+    font-weight: bold;
+    font-style: normal;
+    border: 0px solid transparent;
+      
+  }
+  
+  .menu2 .arrow2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0;
+    border: 1px solid #fff;
+    transition: transform 0.5s ease;
+  }
+  
+  .menu2-info {
+    flex-grow: 2;
+    padding: 5px;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  .menu2.expand .menu2-info{
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  
+  .menu2.expand {
+    width: 17px;
+    transform: translateX(100%);
+    
+  }
+  
+  .menu2 .arrow1.rotate {
+    transform: rotate(180deg);
+  }
+  
+  .menu2.expand .code {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  .menu1 {
+    border: 1px solid #fff;
+    width: 100%; /* Full width on small screens */
+    max-width: 400px; /* Max width on larger screens */
+    margin-top: 10px;
+    display: flex;
+    margin-left:auto;
+    flex-direction: column;
+    height: 60px;
+    background-color: #090909;
+    transition: width 1.5s ease, transform 1.5s ease;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.menu1 .arrow1 {
+    border: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0;
+    transition: transform 0.5s ease;
+}
+
+.menu1 h1 {
+    font-size: 15px;
+    padding: 5px;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    color:#fff;
+}
+
+.menu1.expand {
+    width: 17px;
+    margin-right:-15px;
+    transform: translateX(0);
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+.menu2-info .code{
+    
+    font-size: 10px;
+}
+
+/*menu none*/
+.menu1,
+.menu2 {
+    display: none;
+}
+
+
+
+/* Button Styles */
+.btn1-start,
+
+.btn1-re-start,
+.btn2-pause,
+.btn2-resume{
+    width: 100%;
+    max-width: 80px; /* Max width for larger screens */
+    height: 50px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    font-weight: 600;
+    border: 0;
+    margin: 5px;
+    font-size:10px;
+    transition: background-color 0.3s ease;
+}
+.btn1-re-start
+{
+    margin-left: 5px;
+    position: absolute;
+    
+    width: 100%;
+    max-width: 170px;
+}
+.box-1
+{
+    width: 100%;
+    max-width: 300px;
+    height:70px;
+    display: flex;
+    flex-direction: row;
+    order: -1;
+    position: absolute;
+}
+.box-2
+{
+    width: 50%;
+    height:70px;
+    display: flex;
+    flex-direction: row;
+    
+    margin-left: 180px;
+    
+    order:-1;
+    z-index:1;
+}
+.btn2-resume
+{
+    margin-left: 5px;
+    position: absolute;
+    
+    width: 100%;
+    max-width: 80px;
+}
+.btn1-startasc i,
+.btn1-startdsc i,
+.btn1-re-start i,
+.btn2-pause i,
+.btn2-resume i {
+    color: #000;
+}
+
+.btn1-startasc:hover,
+.btn1-startdsc:hover,
+.btn1-re-start:hover,
+.btn2-pause:hover,
+.btn2-resume:hover {
+    background-color: rgba(100, 91, 91, 0.712);
+    color: #fff;
+}
+
+.btn1-startasc:hover i,
+.btn1-startdsc:hover i,
+.btn1-re-start:hover i,
+.btn2-pause:hover i,
+.btn2-resume:hover i {
+    color: #fff;
+}
+/* Create Button */
+.create {
+    width: 200px;
+    height: 85px;
+    border-radius: 5px;
+    color: #000;
+    margin: 0;
+    margin-top: 0;
+    position: relative;
+    right: 0;
+    order: 1;
+    background-color: #f0f0f0; /* Added for visibility */
+    text-align: center; /* Centers the text */
+    
+    font-size: 16px; /* Font size of the text */
+}
+
+
+.create:hover {
+    background-color: rgba(100, 91, 91, 0.712);
+    color: #fff;
+}
+
+/* Prompt Section */
+.prompt {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 50%;
+    height: 100px;
+    max-width: 300px;
+    margin-top: 30px;
+    box-sizing: border-box;
+    margin-left: 10px;
+  }
+  
+  .prompt-menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    background-color: #f2f2f2;
+    color: #090909;
+    height: 30px;
+    margin-left: 197px;
+    margin-top: 65px;
+    width: 0;
+    border: 1px solid #fff;
+    transform: translateX(100%);
+    overflow: hidden;
+    transition: transform 0.5s ease, width 0.5s ease;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.prompt-menu.visible {
+    width: 450px;
+    transform: translateX(0);
+}
+
+  
+  .prompt-menu li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    white-space: nowrap;
+  }
+  
+  .prompt-menu input {
+    margin-left: 10px;
+    padding: 5px;
+  }
+  
+  .prompt-menu .go {
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+    border-radius: 5px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+  }
+  .prompt-menu .arrays{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .prompt-menu .arrays p{
+  
+    margin-top: 15px;
+  }
+  .prompt-menu .go:hover {
+    background-color: #0056b3;
+  }
+/* Array Input */
+#array-input {
+    width: 100%;
+    max-width: 150px; /* Max width for larger screens */
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    font-family: "Teachers", sans-serif;
+    font-size: 0.8em;
+}
+/*Box section*/
+.box {
+    background: none;
+    height: 50px;
+    width: 100%;
+    max-width: 500px; /* Max width for larger screens */
+    margin-top: 60px;
+    padding: 0;
+    
+    display: flex;
+    position: absolute;
+    right: 0;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+    margin-left: auto;
+    flex-grow: 2;
+  }
+  
+  .box .slider {
+    width: 100%;
+    max-width: 300px; /* Max width for larger screens */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    flex-grow: 0;
+  }
+  
+  .box h4 {
+    flex-grow: 0;
+    font-size: 18px;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight:400;
+    font-style: normal;
+  }
+  
+  .box .slider input {
+    height: 10px;
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+    background-color: #f2f2f2;
+    border-radius: 25px;
+    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
+  }
+/*toggle*/
+.none {
+    display: none;
+}
+.show
+{
+    background-color: #007bff;
+}
+
+
+
+/* Fullscreen active state */
+.fullscreen-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-top:0;
+    background-color: #e0dede;
+    z-index: 1000;
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .fullscreen-active #Visualization {
+    display: block;
+    width: 100%;
+    height: calc(100% - 10px);
+  }
+  
+  .fullscreen-active .navbar,
+  .fullscreen-active .sidebar,
+  .fullscreen-active .content-container:not(#Visualization) {
+    display: none;
+  }
+  
+  .fullscreen-active .controls {
+    position: relative;
+    bottom: 100px;
+    margin-right: auto;
+    margin-left:100px;
+    margin-top: -60px;
+    transform: translateX(-50%);
+    width: auto;
+  
+  }
+  .screen{
+    margin-top:5px;
+  }
+  .fullscreen-active .screen {
+    display: none;
+  }
+  
+  .fullscreen-active .cancel {
+    display: block;
+    margin-top:50px;
+  }
+  .fullscreen-active .menu2
+  {
+    height:260px;
+  }
+
+  .fullscreen-active .menu1,
+  .fullscreen-active .menu2 {
+      margin-top: 100px;
+      display: flex;
+      flex-direction: row-reverse;
+      background-color:#3b3939;
+      z-index: 999;
+  }
+
+
+/* Apply margin-top to elements with class e2, e3, etc. inside fullscreen-active */
+
+
+  .fullscreen-active .menu2 .menu2-info .code
+  {
+    padding: -5px;
+  }
+  .fullscreen-active .menu2 .menu2-info .code .e1,
+  .fullscreen-active .menu2 .menu2-info .code .e2,
+  .fullscreen-active .menu2 .menu2-info .code .e3,
+  .fullscreen-active .menu2 .menu2-info .code .e4,
+  .fullscreen-active .menu2 .menu2-info .code .e5,
+  .fullscreen-active .menu2 .menu2-info .code .e6
+  {
+    margin-top: -10px;
+  }
+  .fullscreen-active .menu2 .menu2-info .code h4 {
+  
+    margin-bottom: 5px; /* Adjust the bottom margin */
+    padding-left: 10px; /* Adjust left padding for indentation */
+    font-size: 12px;
+}
+
+  
+  .fullscreen-active .linear-visual {
+    width: 100%;
+    height: 80%;
+    flex-wrap: wrap;
+  }
+  .fullscreen-active .main {
+    
+    position: relative; /* Allows the absolute positioning of child elements */
+    
+  }
+  .fullscreen-active .main p{
+    position: absolute;
+    top: -5px;          /* Adjust this value to move the element vertically */
+    left: 120px; 
+    margin-top: -10px;
+  }
+  .fullscreen-active .array {
+    flex-wrap: nowrap;
+    margin-left: 150px;
+    margin-top: 0px;
+  }
+  .fullscreen-active #container{
+    margin-top: 10px;
+  }
+  /*A* star Full Screem*/
+  .fullscreen-active .container{
+    margin-top: -45px;
+  }
+  .fullscreen-active .info{
+    padding-top: 150px;
+  }
+  /* */
+  .fullscreen-active .prompt
+{
+  margin-top:40px;
+  margin-left:-60% ;
+  width:100%;
+  height: 150px;
+  
+}
+.fullscreen-active .prompt .create {
+ 
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 200px;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .fullscreen-active .prompt .prompt-menu {
+
+    margin-top: 72px;
+    margin-left: 209px;
+    width: 0;
+    overflow: hidden;
+    transform: translateX(100%);
+    transition: transform 0.5s ease, width 0.5s ease;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    line-height:40px;
+  }
+  .fullscreen-active .prompt-menu.visible {
+    width: 36%;
+    transform: translateX(0);
+  }
+  .fullscreen-active #array-input{
+    margin-top:10px;
+    width: 100%;
+    max-width: 150px; /* Max width for larger screens */
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    font-family: "Teachers", sans-serif;
+    font-size: 0.8em;
+  }
+  .fullscreen-active #goButton
+  {
+    width: 35px;
+    height:35px;
+    margin-top: 5px;
+    line-height: 30px;
+    border-radius: 5px;
+  }
+  .fullscreen-active .box{
+    margin-top:530px;
+  }
+  .fullscreen-active  .menu2.expand{
+    margin-right: 10px;
+  }
+  .fullscreen-active  .menu1.expand{
+    margin-right: -5px;
+  }
+  .cancel
+{
+    margin-left:auto;
+    width: 30px;
+    height:30px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 50px;
+    margin-left: auto;
+    display: none;
+
+}
+.cancel i{
+    margin-top: 5px;
+}
+.cancel:hover{
+    background-color: rgb(65, 63, 63); 
+}
+@media(max-width:768px)
+{
+  #Theory
+  {
+    margin-top: 0;
+  }
+  .content-container {
+    width: 100%; /* Adjust width for smaller screens */
+    margin:0; /* Remove margin for smaller screens */
+    padding: 15px; /* Optional: Adjust padding */
+    font-size: 8px; /* Optional: Smaller font size */
+    margin-top: 10px;
+}
+.content
+{
+   width:100%;
+   margin:0;
+   padding:20px; 
+}
+  #container
+  {
+    margin: 0;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+  }
+  .number
+  {
+    width: 20px;
+    height: 20px;
+    font-size: 5px;
+    margin-top: 0;
+    padding: 0;
+  }
+  .num-value
+  {
+    font-size:10px;
+  }
+  .wrapper
+  {
+    margin: 2px;
+  }
+  .index
+  {
+    font-size: 7px;
+  }
+  .menu1
+  {
+    display: none;
+  }
+
+  .menu2
+  {
+    display: none;
+  }
+  .box-1
+  {
+    max-width: 200px;
+    
+  }
+  .box-2
+  {
+    margin-left: 120px;
+  }
+  .btn1-startasc,
+  .btn1-startdsc,
+  .btn1-re-start,
+  .btn2-pause,
+  .btn2-resume
+  {
+    width:50px;
+    font-size:7px;
+    height:30px;
+  }
+  .create
+  {
+    
+      width: 150px;
+      height: 35px;
+      margin-top: -20px;
+      font-size: 10px;
+  }
+  .prompt-menu {
+    margin-left: 0;
+    margin-top: 85px;
+    max-width:250px;
+  }
+  #array-input 
+  {
+    max-width:100px;
+    height:20px;
+  }
+  .box {
+    background: none;
+    height: 30px;
+    width: 30%;
+    
+    margin-right: 40px;
+    margin-top: 80px;
+  }
+  .box h4
+  {
+    font-size:8px;
+  }
+  .screen {
+     display: none;
+  }
+  .screen i{
+    font-size:10px;
+  }
+}

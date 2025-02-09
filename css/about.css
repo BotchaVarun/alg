@@ -1,0 +1,463 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Space Grotesk', sans-serif;
+	text-decoration: none;
+}
+.info {
+	height: 100vh;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	position: relative;
+    display: block;
+	justify-content: center;
+	align-items: center;
+}
+
+.info::before {
+    content: '';
+    background: url('../img/background.png') no-repeat center center fixed;
+    background-attachment: fixed;
+    filter: grayscale(100%); /* Apply full grayscale */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: -1; /* Make sure the background stays behind the content */
+}
+
+.clg
+{
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	
+}
+.info .clg .title
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+
+}
+.info .clg h3{
+    
+    font-size: 35px;
+    margin-top: 0;
+    margin-left: 100px;
+}
+.info .clg h2{
+    
+    font-size: 50px;
+    margin-top: 0;
+    margin-left: 100px;
+}
+
+.anits-logo
+{
+	width:250px;
+	height:230px;
+	left:0;
+    margin-top:-20px;
+}
+nav {
+    position: sticky;
+    display: flex;
+    z-index: 15;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #153448;
+
+    padding: 10px 20px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+}
+.sidebar li{
+    list-style: none;
+    color:#fff;
+}
+.sidebar li h4{
+    color:#fff;
+}
+.sidebar li h4 a{
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0;
+    width: 100%;
+    display: block;
+}
+.sidebar li .about:hover a
+{
+ color:#080808;
+}
+.sidebar li .help:hover a
+{
+ color:#080808;
+}
+
+.sidebar li .algocode
+{
+    
+    margin-left:-10px;
+}
+.menu-button {
+    display: none;
+    color: #fff;
+}
+
+.section1 h4 {
+    font-size: 28px;
+    color: #fff;
+}
+
+.section2 {
+    display: flex;
+    gap: 30px;
+    
+}
+nav .section2 li 
+{
+    
+    justify-content: center;
+    align-items: center;
+    line-height: 45px;
+    list-style: none;
+    
+}
+
+
+.section2 li h4 a{
+    color: #fff;
+    font-size: 18px;
+    text-transform: capitalize;
+    text-decoration: none;
+    position: relative; /* Necessary to position the underline relative to the text */
+    display: inline-block; /* Ensures the underline aligns with the text */
+}
+
+.section2 li h4 a::before {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Align underline directly under the text */
+    left: 0;
+    width: 0%; /* Hidden by default */
+    bottom:2px;
+    height: 3px;
+    border-radius: 5px;
+    background-color: #fbfbffc8; /* Adjust the underline color */
+    transition: 0.5s ease; /* Smooth transition for hover effect */
+}
+
+.section2 li h4 a:hover::before {
+    width: 100%; /* Underline expands to 80% of the text width */
+}
+
+.algocode {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    
+    padding: 5px 10px;
+    margin-top: 5px;
+    border-radius: 15px;
+}
+.algocode h4{
+    transition: all 0.5s ease;
+}
+.algocode:hover h4 {
+    background-image: linear-gradient(43deg, #7a88cf 0%, #C850C0 36%, #FFCC70 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.menu-button
+{
+    display: none;
+}
+.team{
+	position: relative;
+	width: 100%;
+	background: radial-gradient(#1d0745,#0f051d);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 15px;
+}
+.team-content {
+	width: 100%;
+	max-width: 1350px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+	align-items: center;
+	gap: 2rem;
+	text-align: center;
+	margin-top: 4rem;
+    
+}
+
+.team-content img{
+	width: 100%;
+	height: auto;
+	border-radius: 15px;
+	margin-bottom: 15px;
+}
+.mentor {
+	width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    align-items: center;
+    gap:45px;
+}
+.mentor h2{
+    font-size: 50px;
+    
+}
+.mentor img{
+	width: 100%;
+	height: auto;
+	border-radius: 15px;
+	margin-bottom: 15px;
+}
+.mentor .team-content
+{
+    justify-content: center;
+    align-items: center;
+    padding-left: 350px;
+    margin-top:0;
+}
+.center h1{
+	color: #fff;
+	font-size: 4rem;
+	text-align: center;
+}
+.box{
+	padding: 16px;
+	background: #1b1229;
+	border-radius: 15px;
+	transition: all .38s ease;
+}
+.box h3{
+	font-size: 23px;
+	font-weight: 600;
+	color: #fff;
+	margin-bottom: 8px;
+}
+.box h5{
+	font-size: 15px;
+	font-weight: 600;
+	color: #b7b4bb;
+	margin-bottom: 15px;
+	letter-spacing: 2px;
+}
+.icons i{
+	display: inline-block;
+	color: #fff;
+	font-size: 20px;
+	margin: 0 8px;
+	transition: all .38s ease;
+}
+.icons i:hover{
+	transform: scale(1.2);
+}
+.box:hover{
+	transform: translateY(-10px);
+	cursor: pointer;
+}
+
+@media(max-width: 1240px){
+	.team{
+		width: 100%;
+		height: auto;
+		padding: 90px 2%;
+	}
+	.center h1{
+		font-size: 3.2rem;
+	}
+}
+@media(max-width:780px)
+{
+	nav {
+        padding: 10px;
+    }
+
+    .section1 h4 {
+        font-size: 20px;
+    }
+
+    .section2 a {
+        font-size: 16px;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .section2 li .about
+    {
+        display: none;
+    }
+    .section2 li .algocode
+    {
+        display: none;
+    }
+    .section2 li .help
+    {
+        display:none;
+    }
+	.info
+	{
+		width: 100%;
+		height:30vh;
+		background-size:150% 150%;
+		margin-top: 0;
+	}
+	.info .clg img
+	{
+      width:50px;
+	  height:50px;
+	}
+	.info .clg .title
+	{
+		font-size:8px;
+	}
+    .team-content
+    {
+        width: 100%;
+        grid-template-columns: repeat(auto-fill, minmax(150px, auto));
+        margin-top: 4rem;
+    }.mentor
+    {
+        padding: 0;
+        margin:0;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .mentor .team-content {
+        z-index: 10;
+        display: flex; /* Make sure to set display to grid */
+        
+        width: 100%;
+        padding: 0;
+        
+       
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        margin-top: -40px;
+    }
+    .mentor .team-content .box{
+        width:30%;
+        height:400px;
+    }
+    .info {
+        height: 60vh; /* Maintain full viewport height on smaller screens */
+    }
+    .info .clg .title h2
+    {
+        font-size: 20px;
+        margin-left:15px;
+        margin-top: 0;
+    }
+    .info .clg .title h3
+    {
+        font-size: 15px;
+        margin-left:15px;
+        margin-top: 0;
+    }
+
+    .info .clg  img{
+        width:100px;
+        height:100px;
+
+    }
+    .mentor h2
+    {
+        font-size:12px;
+        margin-top:15px;
+        color:black;
+    }
+    .mentor .team-content
+    {
+        font-size:12px;
+        margin-top:15px;
+        color:black;
+    }
+}
+@media(max-width:580px)
+{
+    .info {
+        height: 30vh; /* Maintain full viewport height on smaller screens */
+    }
+    .info .clg .title
+    {
+        margin-top:10px;
+    }
+    .info .clg .title h2
+    {
+        font-size: 12px;
+        margin-left:15px;
+        margin-top: 0;
+       
+    }
+    .info .clg .title h3
+    {
+        font-size: 9px;
+        margin-left:15px;
+        margin-top: 0;
+       
+    }
+    .info .clg img
+    {
+        width:70px;
+        height: 70px;
+        margin-top:-10px;
+    }
+    .mentor h2
+    {
+        font-size:9px;
+        margin-top:8px;
+        color:black;
+    }
+    .mentor .team-content {
+        z-index: 10;
+        display: flex; /* Make sure to set display to grid */
+        
+        width: 100%;
+        padding: 0;
+
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        margin-top: -40px;
+    }
+    .mentor .team-content .box{
+        width:50%;
+        height:400px;
+    }
+}
